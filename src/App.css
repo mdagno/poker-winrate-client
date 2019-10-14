@@ -1,0 +1,21 @@
+*{
+  box-sizing: border-box;
+}
+
+html{
+  background-color: #282c34;
+  margin: 0;
+  padding: 0;
+}
+
+.App-header {
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  margin: 0;
+  border: 3px solid white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
