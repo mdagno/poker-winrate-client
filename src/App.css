@@ -13,9 +13,10 @@ html{
   color: white;
   text-align: center;
   margin: 0;
-  border: 3px solid white;
+  border: 5px solid white;
 }
 
-.App-link {
+.App-header a {
+  text-decoration: none;
   color: #09d3ac;
 }

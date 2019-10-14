@@ -1,0 +1,20 @@
+.navBar {
+  border: 5px solid white;
+  margin: 5px;
+  width: 15%;
+  height: 20%;
+  float: left;
+}
+
+.navBar ul {
+  list-style: none;
+}
+
+.navBar li {
+  padding: 5px;
+}
+
+.navBar a {
+  text-decoration: none;
+  color: #09d3ac;
+}
