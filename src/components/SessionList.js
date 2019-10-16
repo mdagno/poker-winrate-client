@@ -1,17 +1,27 @@
 import React from 'react';
-import './SessionList.css'
+import './SessionList.css';
+import ApiContext from '../ApiContext'
+import ApiService from '../services/api-service'
+import { Link } from 'react-router-dom';
 
 export default class SessionList extends React.Component {
+  static contextType = ApiContext;
 
-  sessions = this.props.Store.map((session, index) => {
-    return (
-      <li key={index}>
-        <p>Big Blind: {session.stake}</p>
-        <p>Buy-in: {session['Buy-in']}</p>
-        <p>Cashed out: {session['Cashed-out']}</p>
-      </li>
-    )
-  })
+  renderSessions = () => {
+    const {sessionsList = [] } = this.context;
+    return sessionsList.map((session, index) => {
+      return (
+        <li key={index}>
+          <Link to={`/sessions/${session.id}`}>
+          <h3>{session.date_played}</h3>
+          </Link>
+          <p>Big Blind: ${session.big_blind}</p>
+          <p>Buy-in: ${session.buy_in}</p>
+          <p>Cashed out: ${session.cashed_out}</p>
+        </li>
+      )
+    })
+  }
 
   render(){
     return(
@@ -21,7 +31,7 @@ export default class SessionList extends React.Component {
         <option value=''>Filter</option>
       </select>
       <ul className='sessionList-list'>
-        {this.sessions}
+        {this.renderSessions()}
       </ul>
       </div>
     )

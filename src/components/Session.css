@@ -1,0 +1,43 @@
+.detailedView {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  border: solid 5px #09d3ac;
+  padding: 10px;
+}
+
+.detailedView h3{
+  text-align: center;
+}
+
+.gameTypes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.cashMoney {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.cashMoney li {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+#notes {
+  text-align: left;
+}

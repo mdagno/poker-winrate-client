@@ -1,13 +1,14 @@
 .navBar {
   border: 5px solid white;
   margin: 5px;
-  width: 15%;
+  width: 30%;
   height: 20%;
   float: left;
 }
 
 .navBar ul {
   list-style: none;
+  float: left;
 }
 
 .navBar li {

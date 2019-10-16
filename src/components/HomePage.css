@@ -1,0 +1,13 @@
+.homePage{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid white;
+  justify-content: center;
+  margin: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  width: 50%;
+
+}

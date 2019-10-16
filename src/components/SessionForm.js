@@ -28,12 +28,12 @@ export default class SessionForm extends React.Component {
             <input className='form-bigBlind' type='text'></input>
           </div>
           <div className='form-row'>
-            <label for='buiyin'>Buy-in: </label>
-            <input className='form-buyin' type='text'></input>
+            <label for='buyIn'>Buy-in: </label>
+            <input className='form-buyin' type='number'></input>
           </div>
           <div className='form-row'>
             <label for='cashedOut'>Cashed out: </label>
-            <input className='form-cashedOut' type='text'></input>
+            <input className='form-cashedOut' type='number'></input>
           </div>
           <div className='form-row'>
             <label for='notes'>Notes: </label>
