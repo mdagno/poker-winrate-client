@@ -12,6 +12,11 @@ renderNavRoutes = () => {
     return(
     <nav className='navBar'>
       <ul>
+      <li>
+        <NavLink to='/'>
+          Summary
+        </NavLink>
+        </li>
         <li>
         <NavLink to='/sessions'>
           Your Sessions

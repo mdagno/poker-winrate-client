@@ -1,0 +1,17 @@
+.analysis select {
+  width: 20%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.analysis {
+  margin: 10px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: white;
+}

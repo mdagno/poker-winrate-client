@@ -1,18 +1,19 @@
 .navBar {
-  border: 5px solid white;
   margin: 5px;
-  width: 30%;
   height: 20%;
-  float: left;
+
 }
 
 .navBar ul {
   list-style: none;
-  float: left;
+  display: fixed;
+  text-align: center;
 }
 
 .navBar li {
   padding: 5px;
+  margin: 10px;
+  display: inline-block;
 }
 
 .navBar a {

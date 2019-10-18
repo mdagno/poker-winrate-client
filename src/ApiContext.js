@@ -9,8 +9,9 @@ const ApiContext = React.createContext({
   setSessionsList: () => {},
   setSession: () => {},
   clearSession: () => {},
-  addSession: () => {},
-  deleteSession: () => {}
+  addSessionContext: () => {},
+  deleteSessionContext: () => {},
+  updateSessionContext: () => {},
 });
 
 export default ApiContext;
@@ -18,7 +19,7 @@ export default ApiContext;
 export class ApiContextProvider extends React.Component {
   state = {
     sessionsList: [],
-    thing: [],
+    session: [],
     error: null,
   }
 
@@ -30,18 +31,30 @@ export class ApiContextProvider extends React.Component {
     this.setState({ sessionsList: updatedList })
   }
 
-  addSession = session => {
+  addSessionContext = session => {
     this.setState({
       sessionsList: [...this.state.sessionsList, session]
     })
   }
+
+  deleteSessionContext = sessionId => {
+    this.setState({
+      sessionsList: this.state.sessionsList.filter(session => session.id !== sessionId)
+    })
+  }
+
+  // updateSessionContext = sessionId => {
+  //   this.setState({
+  //     sessionsList: 
+  //   })
+  // }
 
   setSession = session => {
     this.setState({currentSession: session})
   }
 
   clearSession = () => {
-    this.setState({currentSession: [],})
+    this.setState({currentSession: []})
   }
 
   render() {
@@ -51,7 +64,8 @@ export class ApiContextProvider extends React.Component {
       setSessionsList: this.setSessionsList,
       setSession: this.setSession,
       clearSession: this.clearSession,
-      addSession: this.addSession,
+      addSessionContext: this.addSessionContext,
+      deleteSessionContext: this.deleteSessionContext,
       error: this.error,
       setError: this.setError,
       clearError: this.clearError,

@@ -4,7 +4,7 @@ import SessionForm from './components/SessionForm';
 import NavBar from './components/NavBar';
 import SessionList from './components/SessionList';
 import Session from './components/Session'
-import Graph from './components/Graph'
+import Analytics from './components/Analytics'
 import HomePage from './components/HomePage'
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -54,10 +54,10 @@ export default class App extends React.Component {
         />
         <Route 
         exact path='/analysis'
-        render={(props) => <Graph {...props} />}
+        render={(props) => <Analytics {...props} />}
         />
         <Route 
-        exact path='/sessions/:sessionid'
+        exact path='/sessions/:session_id'
         render={(props) => <Session {...props} />}
         />
         </Switch>

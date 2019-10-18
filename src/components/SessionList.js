@@ -5,11 +5,41 @@ import ApiService from '../services/api-service'
 import { Link } from 'react-router-dom';
 
 export default class SessionList extends React.Component {
+  state = {
+    sortBy: 'Date'
+  }
   static contextType = ApiContext;
+
+  handleFilterChange = value => {
+    this.setState({
+      sortBy: value
+    })
+    console.log('Filter executing...')
+  }
 
   renderSessions = () => {
     const {sessionsList = [] } = this.context;
-    return sessionsList.map((session, index) => {
+    let renderedSessions = sessionsList;
+    let sortBy = this.state.sortBy;
+   
+    
+    if(sortBy === 'Online') {
+      renderedSessions = renderedSessions.filter(session => session.game_type_one === 'Online')
+    }
+    else if(sortBy === 'Live') {
+      renderedSessions = renderedSessions.filter(session => session.game_type_one === 'Live')
+    }
+    else if(sortBy === 'Stake'){
+      renderedSessions = renderedSessions.sort((a,b) => b.big_blind - a.big_blind)
+    }
+    else if(sortBy === 'Date'){
+      renderedSessions = renderedSessions.sort((a,b) => b.date_played - a.date_played)
+    }
+    else if(sortBy === 'Time Played'){
+      renderedSessions = renderedSessions.sort((a,b) => b.session_length - a.session_length)
+    }
+
+    return renderedSessions.map((session, index) => {
       return (
         <li key={index}>
           <Link to={`/sessions/${session.id}`}>
@@ -24,11 +54,18 @@ export default class SessionList extends React.Component {
   }
 
   render(){
+    console.log(this.state.sortBy)
     return(
       <div className='sessionList'>
       <h2>Sessions</h2>
-      <select>
-        <option value=''>Filter</option>
+      <label for='filterSessions'>Filter By: </label>
+      <select onChange={e => this.handleFilterChange(e.target.value)}>
+        <option value='Date'>Date</option>
+        <option value='Live'>Live</option>
+        <option value='Online'>Online</option>
+        <option value='Stake'>Stake</option>
+        <option value='Profit'>Profit</option>
+        <option value='Time played'>Time played</option>
       </select>
       <ul className='sessionList-list'>
         {this.renderSessions()}
