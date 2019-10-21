@@ -6,6 +6,7 @@ import SessionList from './components/SessionList';
 import Session from './components/Session'
 import Analytics from './components/Analytics'
 import HomePage from './components/HomePage'
+import EditSession from './components/EditSession'
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
@@ -30,6 +31,7 @@ export default class App extends React.Component {
       <header className="App-header">
         <Link to='/'>
           <h1>Poker WinRate</h1>
+          <i class="fas fa-chart-line"></i>
         </Link>
         <h2>Find your edge</h2>
       </header>
@@ -59,6 +61,10 @@ export default class App extends React.Component {
         <Route 
         exact path='/sessions/:session_id'
         render={(props) => <Session {...props} />}
+        />   
+        <Route 
+        exact path='/sessions/:session_id/edit'
+        render={(props) => <EditSession {...props} />}
         />
         </Switch>
       </main>

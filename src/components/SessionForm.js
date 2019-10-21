@@ -132,7 +132,7 @@ export default class SessionForm extends React.Component {
         <legend>
           <h2>Enter Session Details</h2>
         </legend>
-        <div className='form-row'>
+        <div className='form-row gameTypeTwo'>
          <label for='gameTypeTwo'>Cash or Tournament: </label>
           <select id='gameTypeTwo' defaultValue='Cash' onChange={e => this.gameTypeSelect('game_type_two', e.target.value)}>
             <option value='Cash'>Cash Game</option>

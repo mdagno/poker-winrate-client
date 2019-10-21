@@ -3,6 +3,7 @@ import './SessionList.css';
 import ApiContext from '../ApiContext'
 import ApiService from '../services/api-service'
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 
 export default class SessionList extends React.Component {
   state = {
@@ -17,11 +18,15 @@ export default class SessionList extends React.Component {
     console.log('Filter executing...')
   }
 
+  componentDidMount() {
+    ApiService.getSessions()
+    .then(this.context.setSessionsList)
+  }
+
   renderSessions = () => {
     const {sessionsList = [] } = this.context;
     let renderedSessions = sessionsList;
     let sortBy = this.state.sortBy;
-   
     
     if(sortBy === 'Online') {
       renderedSessions = renderedSessions.filter(session => session.game_type_one === 'Online')
@@ -43,11 +48,11 @@ export default class SessionList extends React.Component {
       return (
         <li key={index}>
           <Link to={`/sessions/${session.id}`}>
-          <h3>{session.date_played}</h3>
-          </Link>
+          <h3>{moment(session.date_played).format('MMMM Do YYYY, h:mm:ss a')}</h3>
           <p>Big Blind: ${session.big_blind}</p>
           <p>Buy-in: ${session.buy_in}</p>
           <p>Cashed out: ${session.cashed_out}</p>
+          </Link>
         </li>
       )
     })
@@ -64,7 +69,6 @@ export default class SessionList extends React.Component {
         <option value='Live'>Live</option>
         <option value='Online'>Online</option>
         <option value='Stake'>Stake</option>
-        <option value='Profit'>Profit</option>
         <option value='Time played'>Time played</option>
       </select>
       <ul className='sessionList-list'>

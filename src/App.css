@@ -20,3 +20,7 @@ html{
   text-decoration: none;
   color: #09d3ac;
 }
+
+a:hover{
+  color: white;
+}

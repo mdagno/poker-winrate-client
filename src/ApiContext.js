@@ -43,11 +43,13 @@ export class ApiContextProvider extends React.Component {
     })
   }
 
-  // updateSessionContext = sessionId => {
-  //   this.setState({
-  //     sessionsList: 
-  //   })
-  // }
+  updateSessionContext = (updatedSession) => {
+    this.setState({
+      sessionsList: this.state.sessionsList.map(session => 
+        (session.id !== updatedSession.id) ? session: updatedSession
+     )
+    })
+  }
 
   setSession = session => {
     this.setState({currentSession: session})
@@ -66,6 +68,7 @@ export class ApiContextProvider extends React.Component {
       clearSession: this.clearSession,
       addSessionContext: this.addSessionContext,
       deleteSessionContext: this.deleteSessionContext,
+      updateSessionContext: this.updateSessionContext,
       error: this.error,
       setError: this.setError,
       clearError: this.clearError,

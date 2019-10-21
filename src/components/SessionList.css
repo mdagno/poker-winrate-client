@@ -5,22 +5,28 @@
   margin: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 70%;
+  width: 80%;
   text-align: center;
-  border: solid 1px white;
+
 }
 
 .sessionList ul{
   list-style: none;
+  padding: 0;
 }
 
 .sessionList li {
-  border: 1px solid white;
+  border: 2px solid white;
+  border-radius: 2px;
   margin: 5px;
 }
 
+.sessionList li:hover{
+  background-color: white;
+}
+
 .sessionList select{
-  width: 30%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
 }

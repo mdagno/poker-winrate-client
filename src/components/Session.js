@@ -1,16 +1,13 @@
 import React from 'react';
-import ApiContext from '../ApiContext'
+import ApiContext from '../ApiContext';
 import ApiService from '../services/api-service';
-import EditSession from './EditSession'
-import './Session.css'
+import { Link } from 'react-router-dom';
+import moment from 'moment';
+import './Session.css';
 
 
 export default class Session extends React.Component {
   static contextType = ApiContext;
-
-  state = {
-    isEditing: false,
-  }
   static defaultProps = {
     match: { params: {} }
   }
@@ -30,12 +27,6 @@ export default class Session extends React.Component {
     this.props.history.push('/sessions')
   }
 
-  handleEditSession = () => {
-    this.setState({
-      isEditing: !this.state.isEditing 
-    })
-  }
-
   handleSubmitChanges = (e, sessionId, newSessionValues) => {
     e.preventDefault();
     ApiService.updateSession(sessionId, newSessionValues)
@@ -49,10 +40,10 @@ export default class Session extends React.Component {
       sessionView = <p>Loading...</p>
     }
 
-    else if (this.state.isEditing === false){
+    else {
       sessionView = (
         <div className='sessionDetails'>
-        <h3>{session.date_played}</h3>
+        <h3>{moment(session.date_played).format('MMMM Do YYYY, h:mm:ss a')}</h3>
         <ul className='gameTypes'>
           <li>{session.game_type_one}</li>
           <li>{session.game_type_two}</li>
@@ -64,14 +55,11 @@ export default class Session extends React.Component {
           <li>Cashed out: ${session.cashed_out}</li>
         </ul>
         <p id='notes'>{session.notes}</p>
-        <button onClick={() => this.handleEditSession()}>Edit</button>
+        <Link to={`/sessions/${this.props.match.params.session_id}/edit`}>
+        <button>Edit</button>
+        </Link>
         <button onClick={() => this.handleDeleteSession(session.id)}>Delete</button>
         </div>
-      )
-    }
-    else if(this.state.isEditing === true) {
-      sessionView = (
-        <EditSession params={this.props.match.params} />
       )
     }
       return sessionView

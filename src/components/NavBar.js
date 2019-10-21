@@ -3,16 +3,23 @@ import { NavLink } from 'react-router-dom';
 import './NavBar.css'
 
 export default class NavBar extends React.Component{
+  state = {
+    expandedView: false,
+  }
 
-renderNavRoutes = () => {
+  handleHamburger = () => {
+    this.setState({
+      expandedView: !this.state.expandedView
+    })
+    console.log('Woohoo hamburger!')
+  }
 
-}
-
-  render(){
-    return(
-    <nav className='navBar'>
-      <ul>
-      <li>
+  renderNavLinks = () => {
+    let navLinks;
+    if (this.state.expandedView === true){
+      navLinks = (
+      <ul className='navLinks'>
+        <li>
         <NavLink to='/'>
           Summary
         </NavLink>
@@ -33,6 +40,21 @@ renderNavRoutes = () => {
         </NavLink>
         </li>
       </ul>
+      )
+    }
+    else {
+      navLinks = '';
+    }
+
+    return navLinks;
+  }
+
+  render(){
+    console.log(this.state)
+    return(
+    <nav className='navBar'>
+      <i class="fas fa-bars" onClick={this.handleHamburger}></i>
+      {this.renderNavLinks()}
     </nav>
     )
   }

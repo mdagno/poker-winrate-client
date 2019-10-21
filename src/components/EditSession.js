@@ -1,5 +1,6 @@
-import React from 'react'
-import ApiService from '../services/api-service'
+import React from 'react';
+import ApiService from '../services/api-service';
+import ApiContext from '../ApiContext';
 import { Link } from 'react-router-dom';
 import './EditSession.css'
 
@@ -16,8 +17,10 @@ export default class EditSession extends React.Component {
     notes: '',
   }
 
+  static contextType = ApiContext;
+
   componentDidMount() {
-    const sessionId = this.props.params.session_id
+    const sessionId = this.props.match.params.session_id
     ApiService.getSessionById(sessionId)
     .then(res => {
       this.setState({
@@ -36,9 +39,13 @@ export default class EditSession extends React.Component {
   submitChanges = e => {
     e.preventDefault()
     let updatedSession = this.state;
-    let sessionId = this.props.params.session_id;
+    let sessionId = this.props.match.params.session_id;
     console.log(sessionId)
     ApiService.updateSession(sessionId, JSON.stringify(updatedSession))
+    .then(() => {
+    this.context.updateSessionContext(updatedSession);
+    this.props.history.push(`/sessions/${sessionId}`);
+    })
   }
   
   componentWillUnmount() {
@@ -58,10 +65,8 @@ export default class EditSession extends React.Component {
   console.log('Select ran!')
   }
 
-
-
   render() {
-   console.log(this.props.params.session_id)
+   console.log(this.props.match.params.session_id)
    console.log(this.props)
    console.log(this.state)
     return (
