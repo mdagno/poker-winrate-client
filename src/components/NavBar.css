@@ -15,10 +15,10 @@
   display: block;
   padding: 0;
   background-color: white;
-  border: 1px solid #09d3ac;
   border-radius: 3px;
   width: 50%;
   margin: 0;
+  text-align: right;
   float: right;
 }
 
@@ -26,17 +26,38 @@
   padding: 5px;
   margin-top: 0px;
   display: block;
+  font-size: 1.25em;
+  font-style: italic;
+}
+
+.one {
+  background-color: #ddd;
+}
+
+.two {
+  background-color: white;
 }
 
 .navBar a {
   text-decoration: none;
-  color: #09d3ac;
+  color: black;
+}
+
+li:hover{
+  background-color: #475080; 
 }
 
 .navBar i {
-  color: #09d3ac;
+  position: relative;
+  left: 10px;
+  color: white;
+  font-size: 1.25em;
   display: block;
-  margin: 5px;
+  margin: 10px;
   margin-bottom: 0px;
   text-align: right;
+}
+
+.navBar i:hover{
+  color:  #475080;
 }

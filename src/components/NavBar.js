@@ -19,22 +19,22 @@ export default class NavBar extends React.Component{
     if (this.state.expandedView === true){
       navLinks = (
       <ul className='navLinks'>
-        <li>
+        <li className="navLink one">
         <NavLink to='/'>
           Summary
         </NavLink>
         </li>
-        <li>
+        <li className="navLink two">
         <NavLink to='/sessions'>
           Your Sessions
         </NavLink>
         </li>
-        <li>
+        <li className="navLink one">
         <NavLink to='/addsession'>
           Add a session
         </NavLink>
         </li>
-        <li>
+        <li className="navLink two">
         <NavLink to='/analysis'>
           Analytics
         </NavLink>

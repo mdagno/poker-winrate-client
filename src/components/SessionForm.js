@@ -128,6 +128,7 @@ export default class SessionForm extends React.Component {
     console.log(this.state.game_type_two)
     console.log(this.state)
     return(
+      <div className='addSession'>
       <form onSubmit={this.handleSessionSubmit}>
         <legend>
           <h2>Enter Session Details</h2>
@@ -141,6 +142,7 @@ export default class SessionForm extends React.Component {
         </div>
         {this.renderSessionForm()}
       </form>
+      </div>
     )
   }
 }

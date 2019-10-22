@@ -70,6 +70,7 @@ export default class EditSession extends React.Component {
    console.log(this.props)
    console.log(this.state)
     return (
+      <div className='editSession' >
       <form onSubmit={this.submitChanges}>
         <div className='form-row'>
           <label for='gameTypeOne'>Live or Online: </label>
@@ -106,6 +107,7 @@ export default class EditSession extends React.Component {
           <button type='submit'>Save</button>
         </div>
       </form>
+      </div>
     )
   }
 }

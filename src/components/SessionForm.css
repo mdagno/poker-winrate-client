@@ -1,10 +1,17 @@
-
-form{
+.addSession > form{
+  width: 80%;
   color: white;
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  top: 100px;
+  left: 35px;
 }
+
+.addSession > h2{
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+}
+
 
 .form-row{
   padding: 5px;
@@ -19,10 +26,29 @@ form{
   flex: 1;
 }
 .form-row > input {
-  flex: 2;
+  flex: 1;
 }
 
 .form-row > textarea {
-  flex: 2;
+  flex: 1;
   height: 100px;
+  width: 200px;
+}
+
+button {
+  box-shadow:inset 0px 1px 3px 0px #91b8b3;
+	background:linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);
+	background-color:#131d38;
+	border-radius:5px;
+	border:1px solid #566963;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+  padding:10px 16px;
+  margin: 2px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #2b665e;
 }

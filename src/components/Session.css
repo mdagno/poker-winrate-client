@@ -1,11 +1,13 @@
 .detailedView {
+  position: absolute;
+  left: 42px;
   color: white;
   display: flex;
   flex-direction: column;
   margin: 10px;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 80%;
   border: solid 5px #09d3ac;
   padding: 10px;
 }

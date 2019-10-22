@@ -9,18 +9,35 @@ html{
 }
 
 .App-header {
-  background-color: #282c34;
   color: white;
   text-align: center;
   margin: 0;
-  border: 5px solid white;
+  background-color: #475080;
+  height: 90px;
+  padding: 0;
+  border-radius: 2px;
+  font-family: sarina, sans-serif;
+  font-style: normal;
+  font-weight: 400;
 }
 
 .App-header a {
   text-decoration: none;
-  color: #09d3ac;
+  color: white;
+  font-size: 18px;
+}
+
+.App-header h1 {
+  margin: 0;
+  padding: 8px;
+  padding-top: 10px;
 }
 
 a:hover{
   color: white;
+}
+
+.App-header i{
+  position: absolute;
+  top: 55px;
 }

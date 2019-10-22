@@ -69,10 +69,10 @@ static contextType = ApiContext;
             style={
               {
                 data: {
-                  stroke: '#09d3ac', 
+                  stroke: '#333', 
                   strokeWidth: 1
                 },
-                parent: {border: "1px solid #ccc"}
+                parent: {border: "1px solid #ccc"},
             }}
           />
         </VictoryChart>
