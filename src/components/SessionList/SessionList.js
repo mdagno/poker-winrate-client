@@ -1,7 +1,7 @@
 import React from 'react';
 import './SessionList.css';
-import ApiContext from '../ApiContext'
-import ApiService from '../services/api-service'
+import ApiContext from '../../ApiContext'
+import ApiService from '../../services/api-service'
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 
@@ -38,7 +38,7 @@ export default class SessionList extends React.Component {
       renderedSessions = renderedSessions.sort((a,b) => b.big_blind - a.big_blind)
     }
     else if(sortBy === 'Date'){
-      renderedSessions = renderedSessions.sort((a,b) => a.date_played - b.date_played)
+      renderedSessions = renderedSessions.sort((a,b) =>  b.date_played - a.date_played)
     }
     else if(sortBy === 'Time Played'){
       renderedSessions = renderedSessions.sort((a,b) => b.session_length - a.session_length)
@@ -54,7 +54,6 @@ export default class SessionList extends React.Component {
             {
               (session.cashed_out > session.buy_in) ? <li className='winning'>+${session.cashed_out-session.buy_in}</li> : <li className='losing'>-${Math.abs(session.cashed_out-session.buy_in)}</li>
             }
-            
             <li>Buy-in: ${session.buy_in}</li>
           </ul>
           </Link>

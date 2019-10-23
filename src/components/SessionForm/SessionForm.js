@@ -1,7 +1,7 @@
 import React from 'react'
 import './SessionForm.css'
-import ApiContext from '../ApiContext';
-import ApiService from '../services/api-service'
+import ApiContext from '../../ApiContext';
+import ApiService from '../../services/api-service'
 
 export default class SessionForm extends React.Component {
   static contextType = ApiContext;

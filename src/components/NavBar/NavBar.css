@@ -53,3 +53,22 @@
   background-color: #00866F; 
 }
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1224px){
+  .navLinks{
+    width: 35%;
+  }
+
+  .navLinks li{
+    text-align: center;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+  .navLinks{
+    width: 35%;
+  }
+  .navLinks li{
+    text-align: center;
+  }
+}

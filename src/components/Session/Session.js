@@ -1,6 +1,6 @@
 import React from 'react';
-import ApiContext from '../ApiContext';
-import ApiService from '../services/api-service';
+import ApiContext from '../../ApiContext';
+import ApiService from '../../services/api-service';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import './Session.css';

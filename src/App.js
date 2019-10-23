@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import SessionForm from './components/SessionForm';
-import NavBar from './components/NavBar';
-import SessionList from './components/SessionList';
-import Session from './components/Session'
-import Analytics from './components/Analytics'
-import HomePage from './components/HomePage'
-import EditSession from './components/EditSession'
+import SessionForm from './components/SessionForm/SessionForm';
+import NavBar from './components/NavBar/NavBar';
+import SessionList from './components/SessionList/SessionList';
+import Session from './components/Session/Session'
+import Analytics from './components/Analytics/Analytics'
+import HomePage from './components/HomePage/HomePage'
+import EditSession from './components/EditSession/EditSession'
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Switch } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import React from 'react';
-import ApiContext from '../ApiContext';
+import ApiContext from '../../ApiContext';
 import './HomePage.css';
 
 export default class HomePage extends React.Component{

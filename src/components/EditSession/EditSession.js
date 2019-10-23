@@ -1,6 +1,6 @@
 import React from 'react';
-import ApiService from '../services/api-service';
-import ApiContext from '../ApiContext';
+import ApiService from '../../services/api-service';
+import ApiContext from '../../ApiContext';
 import './EditSession.css'
 
 export default class EditSession extends React.Component {
@@ -19,7 +19,7 @@ export default class EditSession extends React.Component {
   static contextType = ApiContext;
 
   componentDidMount() {
-    const sessionId = this.props.match.params.session_id
+    const sessionId = this.props.match.params.session_id;
     ApiService.getSessionById(sessionId)
     .then(res => {
       this.setState({
@@ -39,7 +39,6 @@ export default class EditSession extends React.Component {
     e.preventDefault()
     let updatedSession = this.state;
     let sessionId = this.props.match.params.session_id;
-    console.log(sessionId)
     ApiService.updateSession(sessionId, JSON.stringify(updatedSession))
     .then(() => {
     this.context.updateSessionContext(updatedSession);
@@ -61,13 +60,9 @@ export default class EditSession extends React.Component {
     this.setState({
       [gameType]: value,
     })
-  console.log('Select ran!')
   }
 
   render() {
-   console.log(this.props.match.params.session_id)
-   console.log(this.props)
-   console.log(this.state)
     return (
       <div className='editSession' >
       <form onSubmit={this.submitChanges}>
