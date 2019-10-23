@@ -32,19 +32,27 @@
   width: 50%;
   border: 2px inset white;
   text-align: center;
+  padding: 0.3em;
 }
 
 .cashMoney {
   list-style: none;
   display: flex;
   flex-direction: row;
+  text-align: center;
   justify-content: center;
   margin: 0;
   padding: 0;
 }
 
 .cashMoney li {
-  width: 50%;
+  width: 33%;
+  border: 2px inset white;
+  padding: 0.3em;
+}
+
+.cashMoney .winning, .cashMoney .losing{
+  font-size: 1.25em;
 }
 
 p {
@@ -53,4 +61,15 @@ p {
 
 #notes {
   text-align: left;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+  .detailedView {
+    width: 50%;
+  }
 }

@@ -43,3 +43,19 @@ a:hover{
   position: absolute;
   top: 60px;
 }
+
+@media only screen  and (min-width : 1224px) {
+  /* .fas{
+    font-size: 2em;
+    top: 100px;
+  } */
+
+  /* .App-header{
+    height: 125px;
+  }
+
+  .App-header h1{
+    font-size: 3em;
+  } */
+
+}

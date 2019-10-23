@@ -38,7 +38,7 @@ export default class SessionList extends React.Component {
       renderedSessions = renderedSessions.sort((a,b) => b.big_blind - a.big_blind)
     }
     else if(sortBy === 'Date'){
-      renderedSessions = renderedSessions.sort((a,b) => b.date_played - a.date_played)
+      renderedSessions = renderedSessions.sort((a,b) => a.date_played - b.date_played)
     }
     else if(sortBy === 'Time Played'){
       renderedSessions = renderedSessions.sort((a,b) => b.session_length - a.session_length)
@@ -50,8 +50,11 @@ export default class SessionList extends React.Component {
           <Link to={`/sessions/${session.id}`}>
           <h3>{moment(session.date_played).format('MMMM Do YYYY, h:mm:ss a')}</h3>
           <ul className='sessionInfo'>
-            <li>BB: <p>${session.big_blind} </p></li>
-            <li className={(session.cashed_out > session.buy_in) ? 'winning' : 'losing'}>Profit: ${session.cashed_out-session.buy_in}</li>
+            <li>BB: ${session.big_blind}</li>
+            {
+              (session.cashed_out > session.buy_in) ? <li className='winning'>+${session.cashed_out-session.buy_in}</li> : <li className='losing'>-${Math.abs(session.cashed_out-session.buy_in)}</li>
+            }
+            
             <li>Buy-in: ${session.buy_in}</li>
           </ul>
           </Link>
@@ -67,7 +70,7 @@ export default class SessionList extends React.Component {
       <h2>Your Sessions</h2>
       <label for='filterSessions'>Filter By: </label>
       <select onChange={e => this.handleFilterChange(e.target.value)}>
-        <option value='Date'>Date</option>
+        <option value='Date'>Most Recent</option>
         <option value='Live'>Live</option>
         <option value='Online'>Online</option>
         <option value='Stake'>Stake</option>

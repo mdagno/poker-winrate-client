@@ -27,3 +27,26 @@
   padding: 1em;
   border-bottom: 1px solid white;
 }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+  .homePage{
+    text-align: center;
+  }
+  
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (min-width : 1224px) {
+  .homePage{
+    text-align: center;
+    width: 40%;
+    height: 50%;
+    border-top: 30px outset white;
+    border-left: 30px outset white;
+  }
+  
+  .homePage h2{
+    padding: 1em;
+    margin-left: 1em;
+  }
+}

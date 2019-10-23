@@ -52,6 +52,11 @@ export default class Session extends React.Component {
         <p>Time played: {session.session_length} hours</p>
         <ul className='cashMoney'>
           <li>Buy in: ${session.buy_in}</li>
+          {
+            (session.cashed_out > session.buy_in) ? 
+            <li className='winning'>+${session.cashed_out-session.buy_in}</li> : 
+            <li className='losing'>-${Math.abs(session.cashed_out-session.buy_in)}</li>
+          }
           <li>Cashed out: ${session.cashed_out}</li>
         </ul>
         <p id='notes'>{session.notes}</p>
