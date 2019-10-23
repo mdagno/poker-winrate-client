@@ -1,39 +1,50 @@
 .detailedView {
-  position: absolute;
-  left: 42px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  margin: 10px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
+  color: 222;
+  display: flex;
+  flex-direction: column;
   width: 80%;
-  border: solid 5px #09d3ac;
   padding: 10px;
+  background-color: #ccc;
+  border-radius: 5px;
+  border: 3px outset white;
 }
 
 .detailedView h3{
   text-align: center;
 }
 
+.detailedView p {
+  border: 2px inset white;
+  padding: 0.3em;
+}
+
 .gameTypes {
   list-style: none;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
   padding: 0;
+  margin: 0;
+}
+
+.gameTypes li {
+  width: 50%;
+  border: 2px inset white;
+  text-align: center;
 }
 
 .cashMoney {
   list-style: none;
   display: flex;
+  flex-direction: row;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .cashMoney li {
-  margin-left: 10px;
-  margin-right: 10px;
+  width: 50%;
 }
 
 p {

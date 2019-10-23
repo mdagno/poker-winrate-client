@@ -1,9 +1,9 @@
 import React from 'react'
 import './Analytics.css'
-import { VictoryAxis } from 'victory';
 import { VictoryLine } from 'victory';
-import { VictoryTheme } from 'victory';
 import { VictoryChart } from 'victory';
+import { VictoryLabel } from 'victory';
+import {VictoryTheme} from 'victory';
 import ApiContext from '../ApiContext';
 
 export default class Analytics extends React.Component {
@@ -56,24 +56,33 @@ static contextType = ApiContext;
     console.log(this.state)
     return(
       <div className="analysis">
-        <label for="filterAnalytics">See Data: </label>
         <select className="filterAnalytics" onChange={e => this.handleFilterChange(e.target.value)}>
           <option value="Profits">Total Profits</option>
           <option value="Online">Online Profits</option>
           <option value="Live">Live Profits</option>
         </select>
-        <VictoryChart  height={500} width={450} padding={70} animate={1000} tickValues={[]}>
+        <VictoryChart  height={500} width={450} padding={70} animate={100} theme={VictoryTheme.material}>
           <VictoryLine 
             interpolation='linear'
             data={this.generateData()} 
             style={
               {
                 data: {
-                  stroke: '#333', 
-                  strokeWidth: 1
+                  stroke: '#009BB0', 
+                  strokeWidth: 3
                 },
                 parent: {border: "1px solid #ccc"},
             }}
+          />
+          <VictoryLabel 
+          text='Sessions'
+          x={200}
+          y={470}
+          />
+          <VictoryLabel 
+          text='Profit'
+          x={25}
+          y={30}
           />
         </VictoryChart>
       </div>

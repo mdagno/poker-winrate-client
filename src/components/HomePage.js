@@ -28,13 +28,13 @@ export default class HomePage extends React.Component{
     return (sessionWinRatesSum / sessionWinRates.length).toFixed(2)
   }
   
-  
   render(){
     return(
       <div className='homePage'>
-        <h3>Net Earnings: ${this.calculateTotalEarnings()}</h3>
+        <h2>Your Summary</h2>
+        <h3>${this.calculateTotalEarnings()} Total Profit</h3>
         <h3>Most Played Stake: $5/$10</h3>
-        <h3>Total Sessions: {this.computeTotalSessions()}</h3>
+        <h3>{this.computeTotalSessions()} Sessions Played</h3>
         <h3>{this.calculateWinRate()} BB/hr</h3>
       </div>
   )

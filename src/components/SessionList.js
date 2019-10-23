@@ -49,9 +49,11 @@ export default class SessionList extends React.Component {
         <li key={index}>
           <Link to={`/sessions/${session.id}`}>
           <h3>{moment(session.date_played).format('MMMM Do YYYY, h:mm:ss a')}</h3>
-          <p>Big Blind: ${session.big_blind}</p>
-          <p>Buy-in: ${session.buy_in}</p>
-          <p>Cashed out: ${session.cashed_out}</p>
+          <ul className='sessionInfo'>
+            <li>BB: <p>${session.big_blind} </p></li>
+            <li className={(session.cashed_out > session.buy_in) ? 'winning' : 'losing'}>Profit: ${session.cashed_out-session.buy_in}</li>
+            <li>Buy-in: ${session.buy_in}</li>
+          </ul>
           </Link>
         </li>
       )
@@ -62,7 +64,7 @@ export default class SessionList extends React.Component {
     console.log(this.state.sortBy)
     return(
       <div className='sessionList'>
-      <h2>Sessions</h2>
+      <h2>Your Sessions</h2>
       <label for='filterSessions'>Filter By: </label>
       <select onChange={e => this.handleFilterChange(e.target.value)}>
         <option value='Date'>Date</option>

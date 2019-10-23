@@ -1,7 +1,6 @@
 import React from 'react';
 import ApiService from '../services/api-service';
 import ApiContext from '../ApiContext';
-import { Link } from 'react-router-dom';
 import './EditSession.css'
 
 export default class EditSession extends React.Component {

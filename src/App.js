@@ -33,11 +33,12 @@ export default class App extends React.Component {
           <h1>Poker WinRate</h1>
           <i class="fas fa-chart-line"></i>
         </Link>
+        <Switch>
+          <NavBar />
+        </Switch>
       </header>
 
-      <Switch>
-      <NavBar />
-      </Switch>
+ 
       <main>
         <Switch>
         <Route 

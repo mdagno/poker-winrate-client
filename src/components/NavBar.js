@@ -11,41 +11,36 @@ export default class NavBar extends React.Component{
     this.setState({
       expandedView: !this.state.expandedView
     })
-    console.log('Woohoo hamburger!')
   }
 
   renderNavLinks = () => {
     let navLinks;
     if (this.state.expandedView === true){
       navLinks = (
-      <ul className='navLinks'>
-        <li className="navLink one">
+      <ul className='navLinks' onClick={this.handleHamburger}>
         <NavLink to='/'>
-          Summary
-        </NavLink>
-        </li>
-        <li className="navLink two">
-        <NavLink to='/sessions'>
-          Your Sessions
-        </NavLink>
-        </li>
         <li className="navLink one">
-        <NavLink to='/addsession'>
-          Add a session
-        </NavLink>
+          Summary
         </li>
+        </NavLink>
+        <NavLink to='/sessions'>
         <li className="navLink two">
-        <NavLink to='/analysis'>
-          Analytics
-        </NavLink>
+          Your Sessions
         </li>
+        </NavLink>
+        <NavLink to='/addsession'>
+        <li className="navLink one">
+          Add a session
+        </li>
+        </NavLink>
+        <NavLink to='/analysis'>
+        <li className="navLink two">
+          Analytics
+        </li>
+        </NavLink>
       </ul>
       )
     }
-    else {
-      navLinks = '';
-    }
-
     return navLinks;
   }
 
@@ -53,8 +48,10 @@ export default class NavBar extends React.Component{
     console.log(this.state)
     return(
     <nav className='navBar'>
+      <div className='hamburger-menu'>
       <i class="fas fa-bars" onClick={this.handleHamburger}></i>
       {this.renderNavLinks()}
+      </div>
     </nav>
     )
   }

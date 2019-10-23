@@ -45,8 +45,8 @@ export default class Session extends React.Component {
         <div className='sessionDetails'>
         <h3>{moment(session.date_played).format('MMMM Do YYYY, h:mm:ss a')}</h3>
         <ul className='gameTypes'>
-          <li>{session.game_type_one}</li>
-          <li>{session.game_type_two}</li>
+        <li>{session.game_type_one}</li>
+        <li>{session.game_type_two}</li>
         </ul>
         <p>${session.small_blind} / ${session.big_blind}</p>
         <p>Time played: {session.session_length} hours</p>
