@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`The UI of the components render as expected Analytics renders correctly 1`] = `
+exports[`Analytics component Analytics renders correctly 1`] = `
 <div
   className="analysis"
 >
@@ -14,17 +14,17 @@ exports[`The UI of the components render as expected Analytics renders correctly
       Total Profits
     </option>
     <option
-      value="Online"
+      value="Online Profits"
     >
       Online Profits
     </option>
     <option
-      value="Live"
+      value="Live Profits"
     >
       Live Profits
     </option>
     <option
-      value="Big Blind"
+      value="BB/hour"
     >
       BB/hour
     </option>
@@ -56,7 +56,7 @@ exports[`The UI of the components render as expected Analytics renders correctly
       width={450}
     >
       <g
-        clipPath="url(#victory-clip-2)"
+        clipPath="url(#victory-clip-4)"
         style={
           Object {
             "border": "1px solid #ccc",
@@ -67,7 +67,7 @@ exports[`The UI of the components render as expected Analytics renders correctly
       >
         <defs>
           <clipPath
-            id="victory-clip-2"
+            id="victory-clip-4"
           >
             <rect
               height={360}
@@ -145,7 +145,7 @@ exports[`The UI of the components render as expected Analytics renders correctly
           textAnchor="start"
           x={25}
         >
-          Profit
+          Profits
         </tspan>
       </text>
       <g
@@ -909,466 +909,5 @@ exports[`The UI of the components render as expected Analytics renders correctly
       />
     </div>
   </div>
-</div>
-`;
-
-exports[`The UI of the components render as expected EditSession renders correctly 1`] = `
-<div
-  className="editSession"
->
-  <form
-    onSubmit={[Function]}
-  >
-    <div
-      className="form-row"
-    >
-      <label
-        for="gameTypeOne"
-      >
-        Live or Online: 
-      </label>
-      <select
-        defaultValue="Live"
-        id="gameTypeOne"
-        onChange={[Function]}
-      >
-        <option
-          value="Live"
-        >
-          Live game
-        </option>
-        <option
-          value="Online"
-        >
-          Online game
-        </option>
-      </select>
-    </div>
-    <div
-      className="form-row"
-    >
-      <label
-        for="smallBlind"
-      >
-        Small Blind: 
-      </label>
-      <input
-        className="form-smallBlind"
-        defaultValue={null}
-        id="smallBlind"
-        onChange={[Function]}
-        type="number"
-      />
-    </div>
-    <div
-      className="form-row"
-    >
-      <label
-        for="bigBlind"
-      >
-        Big Blind: 
-      </label>
-      <input
-        className="form-bigBlind"
-        defaultValue={null}
-        id="bigBlind"
-        onChange={[Function]}
-        type="number"
-      />
-    </div>
-    <div
-      className="form-row"
-    >
-      <label
-        for="buyIn"
-      >
-        Buy-in: 
-      </label>
-      <input
-        className="form-buyin"
-        defaultValue={null}
-        id="buyIn"
-        onChange={[Function]}
-        type="number"
-      />
-    </div>
-    <div
-      className="form-row"
-    >
-      <label
-        for="cashedOut"
-      >
-        Cashed out: 
-      </label>
-      <input
-        className="form-cashedOut"
-        defaultValue={null}
-        id="cashedOut"
-        onChange={[Function]}
-        type="number"
-      />
-    </div>
-    <div
-      className="form-row"
-    >
-      <label
-        for="cashedOut"
-      >
-        Time played: 
-      </label>
-      <input
-        className="form-SessionLength"
-        defaultValue={null}
-        id="sessionLength"
-        onChange={[Function]}
-        type="number"
-      />
-    </div>
-    <div
-      className="form-row"
-    >
-      <label
-        for="notes"
-      >
-        Notes: 
-      </label>
-      <textarea
-        className="form-notes"
-        defaultValue=""
-        id="notes"
-        onChange={[Function]}
-        type="text"
-      />
-    </div>
-    <div
-      className="form-row"
-    >
-      <button
-        type="submit"
-      >
-        Save
-      </button>
-    </div>
-  </form>
-</div>
-`;
-
-exports[`The UI of the components render as expected HomePage renders correctly 1`] = `
-<div
-  className="homePage"
->
-  <h2>
-    Your Summary
-  </h2>
-  <h3>
-    $
-    0
-     Total Profit
-  </h3>
-  <h3>
-    Most Played Stake: $5/$10
-  </h3>
-  <h3>
-    0
-     Sessions Played
-  </h3>
-  <h3>
-    NaN
-     BB/hr
-  </h3>
-</div>
-`;
-
-exports[`The UI of the components render as expected NavBar renders correctly 1`] = `
-<nav
-  className="navBar"
->
-  <div
-    className="hamburger-menu"
-  >
-    <i
-      class="fas fa-bars"
-      onClick={[Function]}
-    />
-  </div>
-</nav>
-`;
-
-exports[`The UI of the components render as expected Session renders correctly 1`] = `
-<div
-  className="detailedView"
->
-  <div
-    className="sessionDetails"
-  >
-    <h3>
-      October 23rd 2019, 5:28:15 pm
-    </h3>
-    <ul
-      className="gameTypes"
-    >
-      <li />
-      <li />
-    </ul>
-    <p>
-      $
-       / $
-    </p>
-    <p>
-      Time played: 
-       hours
-    </p>
-    <ul
-      className="cashMoney"
-    >
-      <li>
-        Buy in: $
-      </li>
-      <li
-        className="losing"
-      >
-        -$
-        NaN
-      </li>
-      <li>
-        Cashed out: $
-      </li>
-    </ul>
-    <p
-      id="notes"
-    />
-    <a
-      href="/sessions/undefined/edit"
-      onClick={[Function]}
-    >
-      <button>
-        Edit
-      </button>
-    </a>
-    <button
-      onClick={[Function]}
-    >
-      Delete
-    </button>
-  </div>
-</div>
-`;
-
-exports[`The UI of the components render as expected SessionForm renders correctly 1`] = `
-<div
-  className="addSession"
->
-  <form
-    onSubmit={[Function]}
-  >
-    <legend>
-      <h2>
-        Enter Session Details
-      </h2>
-    </legend>
-    <div
-      className="form-row gameTypeTwo"
-    >
-      <label
-        for="gameTypeTwo"
-      >
-        Game Type: 
-      </label>
-      <select
-        defaultValue="Cash"
-        id="gameTypeTwo"
-        onChange={[Function]}
-      >
-        <option
-          value="Cash"
-        >
-          Cash Game
-        </option>
-        <option
-          value="Tournament"
-        >
-          Tournament
-        </option>
-      </select>
-    </div>
-    <fieldset>
-      <div
-        className="form-row"
-      >
-        <label
-          for="gameTypeOne"
-        >
-          Live or Online: 
-        </label>
-        <select
-          defaultValue="Live"
-          id="gameTypeOne"
-          onChange={[Function]}
-        >
-          <option
-            value="Live"
-          >
-            Live game
-          </option>
-          <option
-            value="Online"
-          >
-            Online game
-          </option>
-        </select>
-      </div>
-      <div
-        className="form-row"
-      >
-        <label
-          for="smallBlind"
-        >
-          Small Blind: 
-        </label>
-        <input
-          className="form-smallBlind"
-          id="smallBlind"
-          onChange={[Function]}
-          type="number"
-        />
-      </div>
-      <div
-        className="form-row"
-      >
-        <label
-          for="bigBlind"
-        >
-          Big Blind: 
-        </label>
-        <input
-          className="form-bigBlind"
-          id="bigBlind"
-          onChange={[Function]}
-          type="number"
-        />
-      </div>
-      <div
-        className="form-row"
-      >
-        <label
-          for="buyIn"
-        >
-          Buy-in: 
-        </label>
-        <input
-          className="form-buyin"
-          id="buyIn"
-          onChange={[Function]}
-          type="number"
-        />
-      </div>
-      <div
-        className="form-row"
-      >
-        <label
-          for="cashedOut"
-        >
-          Cashed out: 
-        </label>
-        <input
-          className="form-cashedOut"
-          id="cashedOut"
-          onChange={[Function]}
-          type="number"
-        />
-      </div>
-      <div
-        className="form-row"
-      >
-        <label
-          for="cashedOut"
-        >
-          Time played: 
-        </label>
-        <input
-          className="form-SessionLength"
-          id="sessionLength"
-          onChange={[Function]}
-          type="number"
-        />
-      </div>
-      <div
-        className="form-row"
-      >
-        <label
-          for="notes"
-        >
-          Notes: 
-        </label>
-        <textarea
-          className="form-notes"
-          id="notes"
-          onChange={[Function]}
-          type="text"
-        />
-      </div>
-      <div
-        className="form-row"
-      >
-        <button
-          type="submit"
-        >
-          Submit
-        </button>
-        <button
-          type="reset"
-        >
-          Reset
-        </button>
-      </div>
-    </fieldset>
-  </form>
-</div>
-`;
-
-exports[`The UI of the components render as expected SessionList renders correctly 1`] = `
-<div
-  className="sessionList"
->
-  <h2>
-    Your Sessions
-  </h2>
-  <label
-    for="filterSessions"
-  >
-    Filter By: 
-  </label>
-  <select
-    onChange={[Function]}
-  >
-    <option
-      value="Date"
-    >
-      Most Recent
-    </option>
-    <option
-      value="Live"
-    >
-      Live
-    </option>
-    <option
-      value="Online"
-    >
-      Online
-    </option>
-    <option
-      value="Stake"
-    >
-      Stake
-    </option>
-    <option
-      value="Time played"
-    >
-      Time played
-    </option>
-  </select>
-  <ul
-    className="sessionList-list"
-  />
 </div>
 `;

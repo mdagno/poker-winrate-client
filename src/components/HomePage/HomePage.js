@@ -14,11 +14,7 @@ export default class HomePage extends React.Component{
 
     return totalEarnings;
   }
-
-  computeTotalSessions = () => {
-    return this.context.sessionsList.length;
-  }
-
+  
   calculateWinRate = () => {
     let sessionWinRates = this.context.sessionsList.map(session => {
       return (session.cashed_out - session.buy_in) / session.session_length / session.big_blind
@@ -34,7 +30,7 @@ export default class HomePage extends React.Component{
         <h2>Your Summary</h2>
         <h3>${this.calculateTotalEarnings()} Total Profit</h3>
         <h3>Most Played Stake: $5/$10</h3>
-        <h3>{this.computeTotalSessions()} Sessions Played</h3>
+        <h3>{this.context.sessionsList.length} Sessions Played</h3>
         <h3>{this.calculateWinRate()} BB/hr</h3>
       </div>
   )

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Session component Session renders correctly 1`] = `
+<div
+  className="detailedView"
+>
+  <div
+    className="sessionDetails"
+  >
+    <h3>
+      October 24th 2019, 10:28:15 pm
+    </h3>
+    <ul
+      className="gameTypes"
+    >
+      <li />
+      <li />
+    </ul>
+    <p>
+      $
+       / $
+    </p>
+    <p>
+      Time played: 
+       hours
+    </p>
+    <ul
+      className="cashMoney"
+    >
+      <li>
+        Buy in: $
+      </li>
+      <li
+        className="losing"
+      >
+        -$
+        NaN
+      </li>
+      <li>
+        Cashed out: $
+      </li>
+    </ul>
+    <p
+      id="notes"
+    />
+    <a
+      href="/sessions/undefined/edit"
+      onClick={[Function]}
+    >
+      <button>
+        Edit
+      </button>
+    </a>
+    <button
+      onClick={[Function]}
+    >
+      Delete
+    </button>
+  </div>
+</div>
+`;

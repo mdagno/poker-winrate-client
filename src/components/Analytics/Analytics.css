@@ -27,7 +27,7 @@
 .analysis {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 30px;
+  margin-top: 50px;
   width: 80%;
   height: 40%;
   display: flex;
@@ -36,9 +36,9 @@
   margin-left: auto;
   margin-right: auto;
   color: black;
-  background-color: white;
-  border: 1px dotted #222;
-  border-radius: 3px;
+  background-color: #ccc;
+  border: 5px outset white;
+  border-radius: 5px;
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px){

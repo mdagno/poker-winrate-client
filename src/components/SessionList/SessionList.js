@@ -67,7 +67,7 @@ export default class SessionList extends React.Component {
     return(
       <div className='sessionList'>
       <h2>Your Sessions</h2>
-      <label for='filterSessions'>Filter By: </label>
+      <label htmlFor='filterSessions'>Filter By: </label>
       <select onChange={e => this.handleFilterChange(e.target.value)}>
         <option value='Date'>Most Recent</option>
         <option value='Live'>Live</option>

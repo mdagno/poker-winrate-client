@@ -58,12 +58,6 @@ static contextType = ApiContext;
     }
   }
 
-  calculateDomain = () => {
-    let sessionProfits = this.generateData().map(session => Math.abs(session.y))
-    let yDomain = Math.max(...sessionProfits)
-    return yDomain;
-  }
-
   handleFilterChange = filterValue => {
     this.setState({
       filter: filterValue,
@@ -71,9 +65,6 @@ static contextType = ApiContext;
   }
 
   render(){
-    console.log(this.generateData())
-    console.log(this.calculateDomain())
-    console.log(this.state)
     return(
       <div className="analysis">
         <select className="filterAnalytics" onChange={e => this.handleFilterChange(e.target.value)}>
