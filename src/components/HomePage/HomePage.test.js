@@ -16,5 +16,4 @@ describe('HomePage component', () => {
       .toJSON();
     expect(tree).toMatchSnapshot();  
   });
-  
 })

@@ -90,6 +90,7 @@
   color: white;
   font-style: bold;
   font-size: 1em;
+  padding-top: 0.8em;
 }
 
 .sessionInfo .losing {
@@ -97,12 +98,52 @@
   color: white;
   font-style: bold;
   font-size: 1em;
-  padding-top: 1em;
+  padding-top: 0.8em;
+}
+
+#tournament {
+  color: white;
+  background-color: black;
+  font-size: 0.8em;
+  padding-top: 1.2em;
+}
+
+#buyIn {
+  color: black;
+  background-color: white;
+  font-size: 0.8em;
+}
+
+#bigBlind {
+  padding-top: 0.7em;
 }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1224px){
   .sessionList{
     width: 70%;
+  }
+
+  .sessionList-list {
+    padding-top: 1em;
+  }
+  
+  .sessionInfo .winning {
+    padding: 0.8em;
+    font-size: 1.2em;
+  }
+  
+  .sessionInfo .losing {
+    padding: 0.8em;
+    font-size: 1.2em;
+  }
+  
+  #buyIn{
+    font-size: 1.08em;
+  }
+
+  #tournament {
+    font-size: 1em;
+    padding: 1em;
   }
 }
 
@@ -112,7 +153,32 @@
     width: 60%;
   }
 
-  .sessionList-list li {
-    margin: 10px;
+  .sessionList li h3{
+   font-size: 1.25em;
+  }
+
+  .sessionInfo .winning {
+    padding: 0.8em;
+    font-size: 1.2em;
+  }
+  
+  .sessionInfo .losing {
+    padding: 0.8em;
+    font-size: 1.2em;
+  }
+  
+  #buyIn{
+    padding-top: 1em;
+    font-size: 1.08em;
+  }
+
+  #bigBlind {
+    padding-top: 0.9em;
+    font-size: 1.08em;
+  }
+
+  #tournament {
+    font-size: 1em;
+    padding: 1em;
   }
 }

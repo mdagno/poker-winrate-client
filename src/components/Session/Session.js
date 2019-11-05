@@ -23,8 +23,11 @@ export default class Session extends React.Component {
 
   handleDeleteSession = (sessionId) => {
     ApiService.deleteSession(sessionId)
-    this.context.deleteSessionContext(sessionId);
-    this.props.history.push('/sessions')
+    .then(() => {
+      this.context.deleteSessionContext(sessionId)
+      this.props.history.push('/sessions')
+    });
+    
   }
 
   handleSubmitChanges = (e, sessionId, newSessionValues) => {
@@ -33,9 +36,8 @@ export default class Session extends React.Component {
   }
 
   renderSessionView = () => {
-    let sessionView = ''
+    let sessionView = '';
     let session = this.context.currentSession;
-   
     if (!session) {
       sessionView = <p>Loading...</p>
     }
@@ -53,7 +55,7 @@ export default class Session extends React.Component {
         <ul className='cashMoney'>
           <li>Buy in: ${session.buy_in}</li>
           {
-            (session.cashed_out > session.buy_in) ? 
+            (session.cashed_out - session.buy_in > 0) ? 
             <li className='winning'>+${session.cashed_out-session.buy_in}</li> : 
             <li className='losing'>-${Math.abs(session.cashed_out-session.buy_in)}</li>
           }

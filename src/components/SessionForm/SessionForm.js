@@ -10,8 +10,8 @@ export default class SessionForm extends React.Component {
     this.state = {
         game_type_one: 'Live',
         game_type_two: 'Cash',
-        small_blind: null,
-        big_blind: null,
+        small_blind: 0,
+        big_blind: 0,
         buy_in: null,
         cashed_out: null,
         session_length: null,
@@ -34,23 +34,23 @@ export default class SessionForm extends React.Component {
         </div>
         <div className='form-row'>
           <label htmlFor='smallBlind'>Small Blind</label>
-          <input className='form-smallBlind' type='number' id='smallBlind' onChange={e => this.updateField('small_blind', e.target.value)}></input>
+          <input className='form-smallBlind' type='number' id='smallBlind' min='0.01' step='0.01' onChange={e => this.updateField('small_blind', e.target.value)}></input>
         </div>
         <div className='form-row'>
           <label htmlFor='bigBlind'>Big Blind</label>
-          <input className='form-bigBlind' type='number' id='bigBlind' onChange={e => this.updateField('big_blind', e.target.value)}></input>
+          <input className='form-bigBlind' type='number' id='bigBlind' min='0.01' step='0.01' onChange={e => this.updateField('big_blind', e.target.value)}></input>
         </div>
         <div className='form-row'>
-          <label htmlFor='buyIn'>Buy-in</label>
-          <input className='form-buyin' type='number' id='buyIn' onChange={e => this.updateField('buy_in', e.target.value)}></input>
+          <label htmlFor='form-buyIn'>Buy-in</label>
+          <input className='form-buyIn' type='number' step='0.01' onChange={e => this.updateField('buy_in', e.target.value)}></input>
         </div>
         <div className='form-row'>
           <label htmlFor='cashedOut'>Cashed out</label>
-          <input className='form-cashedOut' type='number' id='cashedOut' onChange={e => this.updateField('cashed_out', e.target.value)}></input>
+          <input className='form-cashedOut' type='number' id='cashedOut' step='0.01' onChange={e => this.updateField('cashed_out', e.target.value)}></input>
         </div>
         <div className='form-row'>
           <label htmlFor='cashedOut'>Hours played</label>
-          <input className='form-SessionLength' type='number' id='sessionLength' onChange={e => this.updateField('session_length', e.target.value)}></input>
+          <input className='form-SessionLength' type='number' id='sessionLength' step='0.1' onChange={e => this.updateField('session_length', e.target.value)}></input>
         </div>
         <div className='form-row'>
           <label htmlFor='notes'>Notes</label>
@@ -74,16 +74,16 @@ export default class SessionForm extends React.Component {
           </select>
         </div>
         <div className='form-row'>
-          <label htmlFor='buyIn'>Buy-in: </label>
-          <input className='form-buyin' type='number' id='buyIn' onChange={e => this.updateField('buy_in', e.target.value)}></input>
+          <label htmlFor='form-buyIn'>Buy-in: </label>
+          <input className='form-buyin' type='number' step='0.01' onChange={e => this.updateField('buy_in', e.target.value)}></input>
         </div>
         <div className='form-row'>
-          <label htmlFor='cashedOut'>Cashed out: </label>
-          <input className='form-cashedOut' type='number' id='cashedOut' onChange={e => this.updateField('cashed_out', e.target.value)}></input>
+          <label htmlFor='form-cashedOut'>Cashed out: </label>
+          <input className='form-cashedOut' type='number' id='cashedOut' step='0.01' onChange={e => this.updateField('cashed_out', e.target.value)}></input>
         </div>
         <div className='form-row'>
-          <label htmlForr='cashedOut'>Time played: </label>
-          <input className='form-SessionLength' type='number' id='sessionLength' onChange={e => this.updateField('session_length', e.target.value)}></input>
+          <label htmlFor='form-sessionLength'>Hours played: </label>
+          <input className='form-sessionLength' type='number' id='sessionLength' step='0.1' onChange={e => this.updateField('session_length', e.target.value)}></input>
         </div>
         <div className='form-row'>
           <label htmlFor='notes'>Notes: </label>
@@ -101,11 +101,9 @@ export default class SessionForm extends React.Component {
  
   handleSessionSubmit = e => {
     e.preventDefault();
-    console.log('Submission permitted')
     let newSession = JSON.stringify(this.state)
     ApiService.addSession(newSession)
     .then(res => {
-      console.log(res)
       this.context.addSessionContext(res)
       this.props.history.push('/')
     }) 
@@ -120,13 +118,12 @@ export default class SessionForm extends React.Component {
   gameTypeSelect = (gameType, value) => {
     this.setState({
       [gameType]: value,
+      small_blind: 0,
+      big_blind: 0
     })
-  console.log('Select ran!')
   }
 
   render(){
-    console.log(this.state.game_type_two)
-    console.log(this.state)
     return(
       <div className='addSession'>
       <form onSubmit={this.handleSessionSubmit}>

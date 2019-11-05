@@ -8,7 +8,7 @@ import ApiContext from '../../ApiContext';
 
 export default class Analytics extends React.Component {
 state = {
-  filter: 'Profits',
+  filter: 'Cash Games',
 }
 static contextType = ApiContext;
 
@@ -18,14 +18,26 @@ static contextType = ApiContext;
     let renderedData = [];
     let accTotal = 0;
 
-    if (filter === 'Profits'){
-      sessionsList.forEach((session, index) => {
+    if (filter === 'Cash Games'){
+      const cashSessions = sessionsList.filter(session => session.game_type_two === 'Cash')
+      cashSessions.forEach((session, index) => {
         let sessionProfit = session.cashed_out - session.buy_in;
         accTotal = accTotal + sessionProfit;
         renderedData.push(accTotal);
       })
       return renderedData;
     }
+
+    else if (filter === 'Tournament'){
+      const tournamentSessions = sessionsList.filter(session => session.game_type_two === 'Tournament')
+      tournamentSessions.forEach((session, index) => {
+        let sessionProfit = session.cashed_out - session.buy_in;
+        accTotal = accTotal + sessionProfit;
+        renderedData.push(accTotal);
+      })
+      return renderedData;
+    }
+
 
     else if(filter === 'Online Profits'){
       let filteredData = sessionsList.filter(session => session.game_type_one === 'Online')
@@ -49,7 +61,8 @@ static contextType = ApiContext;
 
     else if(filter === 'BB/hour'){
       let totalWinRate = 0;
-      sessionsList.forEach((session, index) => {
+      let cashSessions = sessionsList.filter(session => session.game_type_two === 'Cash')
+      cashSessions.forEach((session, index) => {
         let sessionWinRate = (session.cashed_out - session.buy_in) / session.big_blind / session.session_length;
         totalWinRate = (totalWinRate + sessionWinRate) / (index + 1);
         renderedData.push(totalWinRate);
@@ -68,7 +81,8 @@ static contextType = ApiContext;
     return(
       <div className="analysis">
         <select className="filterAnalytics" onChange={e => this.handleFilterChange(e.target.value)}>
-          <option value="Profits">Total Profits</option>
+          <option value="Cash Games">Cash Games</option>
+          <option value="Tournament">Tournament</option>
           <option value="Online Profits">Online Profits</option>
           <option value="Live Profits">Live Profits</option>
           <option value="BB/hour">BB/hour</option>

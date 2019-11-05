@@ -24,7 +24,6 @@ export default class App extends React.Component {
     .catch(this.context.setError)
   }
 
-
   render(){
   return (
     <div className="App">

@@ -20,12 +20,14 @@
   align-content: center;
 }
 
-.form-row  label {
+.form-row label {
   padding: 0.5em;
   flex: 0.75;
 }
 .form-row > input {
   flex: 2;
+  font-size: 1em;
+  padding: 0.2em;
 }
 
 .form-row > textarea {

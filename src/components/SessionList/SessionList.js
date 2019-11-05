@@ -15,7 +15,6 @@ export default class SessionList extends React.Component {
     this.setState({
       sortBy: value
     })
-    console.log('Filter executing...')
   }
 
   componentDidMount() {
@@ -28,7 +27,13 @@ export default class SessionList extends React.Component {
     let renderedSessions = sessionsList;
     let sortBy = this.state.sortBy;
     
-    if(sortBy === 'Online') {
+    if(sortBy === 'Cash') {
+      renderedSessions = renderedSessions.filter(session => session.game_type_two === 'Cash')
+    }
+    else if(sortBy === 'Tournament') {
+      renderedSessions = renderedSessions.filter(session => session.game_type_two === 'Tournament')
+    }
+    else if(sortBy === 'Online') {
       renderedSessions = renderedSessions.filter(session => session.game_type_one === 'Online')
     }
     else if(sortBy === 'Live') {
@@ -50,11 +55,13 @@ export default class SessionList extends React.Component {
           <Link to={`/sessions/${session.id}`}>
           <h3>{moment(session.date_played).format('MMMM Do YYYY, h:mm:ss a')}</h3>
           <ul className='sessionInfo'>
-            <li>BB: ${session.big_blind}</li>
             {
-              (session.cashed_out > session.buy_in) ? <li className='winning'>+${session.cashed_out-session.buy_in}</li> : <li className='losing'>-${Math.abs(session.cashed_out-session.buy_in)}</li>
+              (session.game_type_two === 'Cash') ? <li id='bigBlind'>BB: ${session.big_blind}</li> : <li id='tournament'>Tournament</li>
             }
-            <li>Buy-in: ${session.buy_in}</li>
+            {
+              (session.cashed_out - session.buy_in > 0) ? <li className='winning'>+${session.cashed_out-session.buy_in}</li> : <li className='losing'>-${Math.abs(session.cashed_out-session.buy_in)}</li>
+            }
+            <li id='buyIn'>Buy-in: ${session.buy_in}</li>
           </ul>
           </Link>
         </li>
@@ -63,13 +70,14 @@ export default class SessionList extends React.Component {
   }
 
   render(){
-    console.log(this.state.sortBy)
     return(
       <div className='sessionList'>
       <h2>Your Sessions</h2>
       <label htmlFor='filterSessions'>Filter By: </label>
       <select onChange={e => this.handleFilterChange(e.target.value)}>
         <option value='Date'>Most Recent</option>
+        <option value='Cash'>Cash Games</option>
+        <option value='Tournament'>Tournament</option>
         <option value='Live'>Live</option>
         <option value='Online'>Online</option>
         <option value='Stake'>Stake</option>

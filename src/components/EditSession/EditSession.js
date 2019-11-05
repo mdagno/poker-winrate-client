@@ -75,11 +75,11 @@ export default class EditSession extends React.Component {
         </div>
         <div className='form-row'>
           <label htmlFor='smallBlind'>Small Blind</label>
-          <input className='form-smallBlind' type='number' id='smallBlind' defaultValue ={this.state.small_blind} onChange={e => this.updateField('small_blind', e.target.value)}></input>
+          <input className='form-smallBlind' type='number' id='smallBlind' min='1' defaultValue ={this.state.small_blind} onChange={e => this.updateField('small_blind', e.target.value)}></input>
         </div>
         <div className='form-row'>
           <label htmlFor='bigBlind'>Big Blind</label>
-          <input className='form-bigBlind' type='number' id='bigBlind' defaultValue ={this.state.big_blind} onChange={e => this.updateField('big_blind', e.target.value)}></input>
+          <input className='form-bigBlind' type='number' id='bigBlind' min='1' defaultValue ={this.state.big_blind} onChange={e => this.updateField('big_blind', e.target.value)}></input>
         </div>
         <div className='form-row'>
           <label htmlFor='buyIn'>Buy-in</label>
