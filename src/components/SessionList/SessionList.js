@@ -19,7 +19,10 @@ export default class SessionList extends React.Component {
 
   componentDidMount() {
     ApiService.getSessions()
-    .then(this.context.setSessionsList)
+    .then(res => {
+      console.log(res)
+      this.context.setSessionsList(res)
+    })
   }
 
   renderSessions = () => {

@@ -10,16 +10,14 @@ import EditSession from './components/EditSession/EditSession'
 import Landing from './components/Landing/Landing';
 import Registration from './components/Registration/Registration';
 import Login from './components/Login/Login';
-import { Route } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { Switch } from 'react-router-dom';
+import { Route, Link, Switch, withRouter} from 'react-router-dom';
 import ApiService from './services/api-service';
 import ApiContext from './ApiContext';
 import config from './config';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicOnlyRoute from './Routes/PublicOnlyRoute';
 
-export default class App extends React.Component {
+class App extends React.Component {
   static contextType = ApiContext;
 
   render(){
@@ -51,7 +49,7 @@ export default class App extends React.Component {
         component={SessionForm}
         />
         <PrivateRoute 
-        path={'/sessions'}
+        exact path={'/sessions'}
         component={SessionList}
         />
         <PrivateRoute 
@@ -59,16 +57,20 @@ export default class App extends React.Component {
         component={Analytics}
         />
         <PrivateRoute 
-        path={'/sessions/:session_id'}
+        exact path={'/sessions/:session_id'}
         component={Session}
-        />   
+        /> 
         <PrivateRoute 
-        path={'/sessions/:session_id/edit'}
+        exact path={'/sessions/:session_id/edit'}
         component={EditSession}
-        />
+        />  
         <PublicOnlyRoute 
         path={'/register'}
         component={Registration}
+        />
+        <PublicOnlyRoute 
+        path={'/login'}
+        component={Login}
         />
         </Switch>
       </main>
@@ -76,3 +78,5 @@ export default class App extends React.Component {
   );
   }
 }
+
+export default withRouter(App);

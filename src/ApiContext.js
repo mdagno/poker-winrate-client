@@ -32,7 +32,6 @@ export class ApiContextProvider extends React.Component {
     if (jwtPayload)
       state.user = {
         id: jwtPayload.user_id,
-        name: jwtPayload.name,
         username: jwtPayload.sub,
       }
 

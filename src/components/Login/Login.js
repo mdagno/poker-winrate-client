@@ -14,13 +14,8 @@ export default class Login extends React.Component {
 
 
   handleLoginSuccess = () => {
-    ApiService.getSessions()
-    .then(res => {
-      this.context.setSessionsList(res)
-    })
-    .catch(this.context.setError)
- 
     const { location, history } = this.props
+    console.log(location.state)
     const destination = (location.state || {}).from || '/'
     history.push(destination)
   }
@@ -37,7 +32,7 @@ export default class Login extends React.Component {
         username.value = '';
         password.value = '';
         this.context.processLogin(res.authToken)
-        this.handleLoginSuccess();
+        this.props.history.push('/')
       })
       .catch(res => {
         this.setState({
@@ -53,7 +48,6 @@ export default class Login extends React.Component {
   }
 
   render() {
-    console.log(this.context.user)
     return (
       <form id="login-form" onSubmit={e => this.submitLogin(e)}>
         <h3 id="login-header">Login</h3>

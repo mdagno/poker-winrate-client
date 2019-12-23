@@ -10,6 +10,7 @@
   border: 1px outset white;
   border-radius: 5px;
   font-size: 0.8em;
+  margin-top: 5%;
 }
 
 .login-details {
@@ -31,5 +32,8 @@
   margin-right: auto;
   font-size: 2em;
   padding: 0;
+}
 
+#login-form a {
+  text-align: center;
 }

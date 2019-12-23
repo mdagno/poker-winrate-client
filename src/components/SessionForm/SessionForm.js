@@ -18,7 +18,15 @@ export default class SessionForm extends React.Component {
         notes: '',
       }
   }
-
+  componentDidMount() {
+    let element = document.getElementById("add-session")
+    if(element){
+      document.getElementById("add-session").addEventListener("keypress", this.submitOnEnter);
+    }
+    this.setState({
+      user_id: this.context.user.id
+    })
+  }
   renderSessionForm = () => {
     let sessionForm = this.state.game_type_two
     let renderedForm = '';
@@ -102,6 +110,7 @@ export default class SessionForm extends React.Component {
   handleSessionSubmit = e => {
     e.preventDefault();
     let newSession = JSON.stringify(this.state)
+    console.log(newSession)
     ApiService.addSession(newSession)
     .then(res => {
       this.context.addSessionContext(res)
@@ -123,11 +132,19 @@ export default class SessionForm extends React.Component {
     })
   }
 
+  submitOnEnter(event){
+    if(event.which === 13){
+        event.target.form.dispatchEvent(new Event("submit", {cancelable: true}));
+        event.preventDefault();
+    }
+  }
+
+
   render(){
     console.log(this.state);
     return(
       <div className='addSession'>
-      <form onSubmit={this.handleSessionSubmit}>
+      <form id='add-session' onSubmit={this.handleSessionSubmit}>
         <legend>
           <h2>Enter Session Details</h2>
         </legend>

@@ -1,12 +1,12 @@
 .homePage{
   color: #222;
+  position: fixed;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  width: 80%;
-  margin-top: 50px;
-  margin-left: auto;
-  margin-right: auto;
+  justify-content: flex-start;
+  width: 20%;
+  height: 100%;
+  top: 19.5%;
   border-radius: 3px;
   border-top: 10px outset white;
   border-left: 10px outset white;
@@ -28,13 +28,13 @@
   padding: 1em;
   border-bottom: 1px solid white;
   font-size: 1em;
+  text-align: left;
 }
 
-@media only screen and (min-device-width : 768px){
+/* @media only screen and (min-device-width : 768px){
   .homePage{
     text-align: center;
     width: 40%;
-    height: 50%;
     border-top: 30px outset white;
     border-left: 30px outset white;
     margin-top: 150px;
@@ -44,4 +44,4 @@
     padding: 1em;
     margin-left: 1em;
   }
-}
+} */

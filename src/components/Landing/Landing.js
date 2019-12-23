@@ -8,9 +8,9 @@ export default class Landing extends React.Component {
   
   render(){
     return(
-      <div>
+      <div className='landing'>
       <h2 className='landingTitle'>Welcome to Poker WinRate!</h2>
-      <Login />
+      <p>Poker WinRate is a useful tool to determine your long term win rate in your poker games.  To improve your win rate overtime, it is critical to track your sessions over time to analyze your pattern of play over a long period of time to determine if your edge against other players is improving.</p>
       </div>
     )
   }

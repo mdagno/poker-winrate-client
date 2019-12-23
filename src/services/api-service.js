@@ -1,9 +1,12 @@
 import config from '../config';
+import TokenService from '../services/token-service';
 
 const ApiService = {
   getSessions() {
   return fetch(`${config.API_ENDPOINT}/sessions`, {
     headers: {
+      'content-type': 'application/json',
+      'authorization': `Bearer ${TokenService.getAuthToken()}`,
     },
   })
     .then(res =>
@@ -15,7 +18,8 @@ const ApiService = {
   getSessionById(sessionId){
   return fetch(`${config.API_ENDPOINT}/sessions/${sessionId}`, {
     headers: {
-
+      'content-type': 'application/json',
+      'authorization': `Bearer ${TokenService.getAuthToken()}`,
     },
   })
     .then(res => 
@@ -29,7 +33,10 @@ const ApiService = {
     return fetch(`${config.API_ENDPOINT}/sessions`,
     {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
       body: newSession
     })
     .then(res => {
@@ -46,7 +53,10 @@ const ApiService = {
     return fetch((`${config.API_ENDPOINT}/sessions/${sessionId}`),
     {
       method: 'DELETE',
-      headers: { 'content-type': 'application/json' },
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
     }
     )
     // .then(res => {
@@ -62,7 +72,10 @@ const ApiService = {
     return fetch((`${config.API_ENDPOINT}/sessions/${sessionId}`),
     {
       method: 'PATCH',
-      headers: { 'content-type': 'application/json' },
+      headers: {
+        'content-type': 'application/json',
+        'authorization': `Bearer ${TokenService.getAuthToken()}`,
+      },
       body: newSessionValues
     })
     .then(res => {

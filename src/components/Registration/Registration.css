@@ -34,3 +34,7 @@
   padding: 0;
 
 }
+
+#registration-form a {
+  text-align: center;
+}

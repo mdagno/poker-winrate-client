@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './NavBar.css'
 import ApiContext from '../../ApiContext';
+import TokenService from '../../services/token-service';
 
 export default class NavBar extends React.Component{
   state = {
@@ -18,7 +19,7 @@ export default class NavBar extends React.Component{
 
   renderHamburgerMenu = () => {
     let navLinks;
-    if (this.state.expandedView === true){
+    if (this.state.expandedView === true && TokenService.hasAuthToken()){
       navLinks = (
       <ul className='navLinks' onClick={this.handleHamburger}>
         <NavLink to='/home'>
@@ -48,6 +49,7 @@ export default class NavBar extends React.Component{
   }
 
   renderNavLinks = () => {
+    if(TokenService.hasAuthToken())
     return (
       <ul className="navLinksDesktop">
         <NavLink to='/home'>
@@ -77,6 +79,27 @@ export default class NavBar extends React.Component{
         </NavLink>
     </ul>
     )
+    else {
+      return (
+        <ul className="navLinksDesktop">
+        <NavLink to='/'>
+        <li className="navLink one">
+          Home
+        </li>
+        </NavLink>
+        <NavLink to='/login'>
+        <li className="navLink two">
+          Login
+        </li>
+        </NavLink>
+        <NavLink to='/register'>
+        <li className="navLink one">
+          Register
+        </li>
+        </NavLink>
+    </ul>
+      )
+    }
   }
 
   render(){
