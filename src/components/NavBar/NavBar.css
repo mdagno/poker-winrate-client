@@ -53,22 +53,37 @@
   background-color: #00866F; 
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1224px){
-  .navLinks{
-    width: 35%;
-  }
-
-  .navLinks li{
-    text-align: center;
-  }
+.navLinksDesktop {
+  display: none;
 }
 
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-  .navLinks{
-    width: 35%;
+@media only screen and (min-device-width : 768px){
+  .hamburger-menu {
+    display: none;
   }
-  .navLinks li{
+
+  .navLinksDesktop {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: auto;
+    background-color:  #475080;
+    padding: 1em;
+    border-bottom: 2px solid white;
+  }
+
+
+  .navLinksDesktop li{
     text-align: center;
+    font-size: 0.9em;
+    margin-left: 1.5em;
+    margin-top: 0.5em;
+    width: 7.7em;
+    border-radius: 5px;
+    border: 1px white outset;
+  }
+
+  .navLinksDesktop li:hover {
+    width: 8.2em;
   }
 }

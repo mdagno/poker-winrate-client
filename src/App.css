@@ -16,7 +16,7 @@ html{
   height: 90px;
   padding: 0;
   border-radius: 2px;
-
+  width: 100%;
 }
 
 .App-header a {
@@ -36,7 +36,7 @@ html{
 }
 
 a:hover{
-  color: white;
+  color: #00866F; 
 }
 
 .App-header i{
@@ -45,17 +45,16 @@ a:hover{
 }
 
 @media only screen  and (min-width : 1224px) {
-  /* .fas{
+  .fas{
     font-size: 2em;
-    top: 100px;
-  } */
+    margin-top: 0.4em;
+  }
 
-  /* .App-header{
+  .App-header{
     height: 125px;
   }
 
   .App-header h1{
     font-size: 3em;
-  } */
-
+  }
 }

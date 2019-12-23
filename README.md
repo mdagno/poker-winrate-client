@@ -66,3 +66,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### `Application README`
+This is the Poker WinRate client built with create react app for a solo capstone project in the Thinkful Engineering Immersion program.
+
+
+

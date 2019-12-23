@@ -12,6 +12,14 @@
   font-size: 0.8em;
 }
 
+#edit-header {
+  padding: 0;
+  margin: 0;
+  margin-bottom: 0.5em;
+  text-align: center;
+  font-size: 2em;
+}
+
 .form-row{
   padding: 5px;
   display: flex;
@@ -59,9 +67,11 @@
 	background-size: .65em auto, 100%;
 }
 
-@media only screen  and (min-width : 1224px) {
+@media only screen  and (min-width : 768px) {
   .editSession{
-    margin-top: 80px;
-    width: 40%;
+    padding: 1.5em 3em 3em 3em;
+    margin-top: 150px;
+    width: 30%;
+    height: 550px;
   }
 }

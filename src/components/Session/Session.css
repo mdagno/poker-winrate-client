@@ -68,18 +68,21 @@ p {
   width: 85px;
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px) {
 
-}
-
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
+  .cashMoney .winning, .cashMoney .losing{
+    padding-top: 0.2em;
+  }
   .detailedView {
-    width: 50%;
+    width: 30%;
+    margin-top: 5%;
+    height: auto;
+    padding: 0 1em 1em 1em;
   }
 
+  .detailedView p, .detailedView li{
+    border: 2px inset white;
+    padding: 0.8em;
+  }
   
-.cashMoney .winning, .cashMoney .losing{
-  padding-top: 0.2em;
-}
 }

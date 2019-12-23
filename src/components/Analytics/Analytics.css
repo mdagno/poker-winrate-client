@@ -41,15 +41,10 @@
   border-radius: 5px;
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px){
 	.analysis {
+		margin-top: 5%;
 		width: 50%;
 	}
 }
 
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-	.analysis {
-		width: 50%;
-	}
-}

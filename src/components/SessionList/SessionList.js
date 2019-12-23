@@ -43,7 +43,7 @@ export default class SessionList extends React.Component {
       renderedSessions = renderedSessions.sort((a,b) => b.big_blind - a.big_blind)
     }
     else if(sortBy === 'Date'){
-      renderedSessions = renderedSessions.sort((a,b) =>  b.date_played - a.date_played)
+      renderedSessions = renderedSessions.sort((a,b) =>  a.date_played - b.date_played)
     }
     else if(sortBy === 'Time Played'){
       renderedSessions = renderedSessions.sort((a,b) => b.session_length - a.session_length)
@@ -70,6 +70,7 @@ export default class SessionList extends React.Component {
   }
 
   render(){
+    console.log(this.context.sessionsList)
     return(
       <div className='sessionList'>
       <h2>Your Sessions</h2>

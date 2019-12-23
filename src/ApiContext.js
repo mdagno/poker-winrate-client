@@ -1,6 +1,9 @@
 import React from 'react';
+import TokenService from './services/token-service';
+import AuthService from './services/auth-service';
 
 const ApiContext = React.createContext({
+  user: {},
   sessionsList: [],
   currentSession: [],
   error: null,
@@ -12,15 +15,28 @@ const ApiContext = React.createContext({
   addSessionContext: () => {},
   deleteSessionContext: () => {},
   updateSessionContext: () => {},
+  setUser: () => {},
+  processLogin: () => {},
+  processLogout: () => {},
 });
 
 export default ApiContext;
 
 export class ApiContextProvider extends React.Component {
-  state = {
-    sessionsList: [],
-    session: [],
-    error: null,
+  constructor(props) {
+    super(props)
+    const state = { user: {}, sessionsList: [], session: [], error: null }
+
+    const jwtPayload = TokenService.parseAuthToken()
+
+    if (jwtPayload)
+      state.user = {
+        id: jwtPayload.user_id,
+        name: jwtPayload.name,
+        username: jwtPayload.sub,
+      }
+
+    this.state = state;
   }
 
   clearError = () => {
@@ -59,8 +75,27 @@ export class ApiContextProvider extends React.Component {
     this.setState({currentSession: []})
   }
 
+  setUser = user => {
+    this.setState({ user })
+  }
+
+  processLogin = authToken => {
+    TokenService.saveAuthToken(authToken)
+    const jwtPayload = TokenService.parseAuthToken()
+    this.setUser({
+      id: jwtPayload.user_id,
+      username: jwtPayload.sub,
+    })
+  }
+
+  processLogout = () => {
+    TokenService.clearAuthToken()
+    this.setUser({})
+  }
+
   render() {
     const value = {
+      user: this.state.user,
       sessionsList: this.state.sessionsList,
       currentSession: this.state.currentSession,
       setSessionsList: this.setSessionsList,
@@ -72,6 +107,9 @@ export class ApiContextProvider extends React.Component {
       error: this.error,
       setError: this.setError,
       clearError: this.clearError,
+      setUser: this.setUser,
+      processLogin: this.processLogin,
+      processLogout: this.processLogout,
     }
 
     return (

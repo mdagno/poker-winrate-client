@@ -124,6 +124,7 @@ export default class SessionForm extends React.Component {
   }
 
   render(){
+    console.log(this.state);
     return(
       <div className='addSession'>
       <form onSubmit={this.handleSessionSubmit}>

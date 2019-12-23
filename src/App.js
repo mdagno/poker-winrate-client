@@ -7,22 +7,20 @@ import Session from './components/Session/Session'
 import Analytics from './components/Analytics/Analytics'
 import HomePage from './components/HomePage/HomePage'
 import EditSession from './components/EditSession/EditSession'
+import Landing from './components/Landing/Landing';
+import Registration from './components/Registration/Registration';
+import Login from './components/Login/Login';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 import ApiService from './services/api-service';
 import ApiContext from './ApiContext';
-import config from './config'
-
+import config from './config';
+import PrivateRoute from './Routes/PrivateRoute';
+import PublicOnlyRoute from './Routes/PublicOnlyRoute';
 
 export default class App extends React.Component {
   static contextType = ApiContext;
-
-  componentDidMount() {
-    ApiService.getSessions()
-    .then(this.context.setSessionsList)
-    .catch(this.context.setError)
-  }
 
   render(){
   return (
@@ -42,28 +40,35 @@ export default class App extends React.Component {
         <Switch>
         <Route 
         exact path='/'
-        render={(props) => <HomePage {...props}/>}
+        render={(props) => <Landing {...props}/>}
         />
-        <Route 
-        expact 
-        path='/addsession'
-        render={(props) => <SessionForm {...props}/>}
+        <PrivateRoute 
+        path={'/home'}
+        component={HomePage}
         />
-        <Route 
-        exact path='/sessions'
-        render={(props) => <SessionList {...props} />}
+        <PrivateRoute 
+        path={'/addsession'}
+        component={SessionForm}
         />
-        <Route 
-        exact path='/analysis'
-        render={(props) => <Analytics {...props} />}
+        <PrivateRoute 
+        path={'/sessions'}
+        component={SessionList}
         />
-        <Route 
-        exact path='/sessions/:session_id'
-        render={(props) => <Session {...props} />}
+        <PrivateRoute 
+        path={'/analysis'}
+        component={Analytics}
+        />
+        <PrivateRoute 
+        path={'/sessions/:session_id'}
+        component={Session}
         />   
-        <Route 
-        exact path='/sessions/:session_id/edit'
-        render={(props) => <EditSession {...props} />}
+        <PrivateRoute 
+        path={'/sessions/:session_id/edit'}
+        component={EditSession}
+        />
+        <PublicOnlyRoute 
+        path={'/register'}
+        component={Registration}
         />
         </Switch>
       </main>

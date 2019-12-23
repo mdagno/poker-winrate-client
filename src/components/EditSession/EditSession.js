@@ -65,6 +65,7 @@ export default class EditSession extends React.Component {
   render() {
     return (
       <div className='editSession' >
+      <h3 id='edit-header'>Edit Session</h3>
       <form onSubmit={this.submitChanges}>
         <div className='form-row'>
           <label htmlFor='gameTypeOne'>Live or Online</label>

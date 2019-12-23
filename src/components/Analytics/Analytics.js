@@ -88,8 +88,8 @@ static contextType = ApiContext;
           <option value="BB/hour">BB/hour</option>
         </select>
         <VictoryChart  
-          height={500} 
-          width={450} 
+          height={window.innerWidth < 768 ? 500 : 350} 
+          width={550} 
           padding={70}
           animate={
               {

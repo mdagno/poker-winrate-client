@@ -12,6 +12,7 @@
 
 .addSession h2{
 	margin-top: 30px;
+	margin-bottom: 0.3em;
   font-size: 1.5em;
 	text-align: center;
 	color: white;
@@ -21,7 +22,7 @@ fieldset {
   border-radius: 5px;
   padding: 1.25em;
 	border: 1px outset white;
-  margin-top: 0.5em;
+  margin-top: 1em;
   background-color: #ccc;
 }
 
@@ -101,17 +102,11 @@ button {
 
 
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px){
+@media only screen and (min-device-width : 768px){
 	.addSession form{
 		font-size: 1em;
-	}
-}
-
-/* Desktops and laptops ----------- */
-@media only screen  and (min-width : 1224px) {
-	.addSession form{
-		font-size: 1em;
-		width: 40%;
+		margin-top: 85px;
+		width: 30%;
 	}
 
 }
