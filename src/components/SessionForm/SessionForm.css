@@ -105,6 +105,14 @@ button {
 
 @media only screen and (min-device-width : 768px){
 	.addSession form{
+		width: 70%;
+		margin-top: 12%;
+	}
+
+}
+
+@media only screen and (min-device-width : 1024px){
+	.addSession form{
 		font-size: 1em;
 		margin-top: 85px;
 		width: 30%;

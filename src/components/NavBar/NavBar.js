@@ -19,7 +19,28 @@ export default class NavBar extends React.Component{
 
   renderHamburgerMenu = () => {
     let navLinks;
-    if (this.state.expandedView === true && TokenService.hasAuthToken()){
+    if (this.state.expandedView === true && !TokenService.hasAuthToken()) {
+      navLinks = (
+        <ul className='navLinks' onClick={this.handleHamburger}>
+        <NavLink to='/'>
+        <li className="navLink one">
+          Home
+        </li>
+        </NavLink>
+        <NavLink to='/login'>
+        <li className="navLink two">
+          Login
+        </li>
+        </NavLink>
+        <NavLink to='/register'>
+        <li className="navLink one">
+          Register
+        </li>
+        </NavLink>
+        </ul>
+      )
+    } 
+    else if (this.state.expandedView === true && TokenService.hasAuthToken()){
       navLinks = (
       <ul className='navLinks' onClick={this.handleHamburger}>
         <NavLink to='/home'>
@@ -40,6 +61,11 @@ export default class NavBar extends React.Component{
         <NavLink to='/analysis'>
         <li className="navLink two">
           Analytics
+        </li>
+        </NavLink>
+        <NavLink to='/'>
+        <li className="navLink one" onClick={() => this.context.processLogout()}>
+          Logout
         </li>
         </NavLink>
       </ul>

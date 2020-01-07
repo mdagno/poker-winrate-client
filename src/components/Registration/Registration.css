@@ -2,10 +2,10 @@
   display: flex;
   flex-direction: column;
   color: #222;
-  width: 30%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
+  margin-top: 11%;
   background-color: #ccc;
   padding: 1em;
   border: 1px outset white;
@@ -13,8 +13,20 @@
   font-size: 0.8em;
 }
 
+#registration-form input {
+  border-radius: 5px;
+}
+
+#registration-header {
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2em;
+  padding: 0; 
+}
+
 .login-details {
-  margin: 1em;
+  margin: 0.5em;
   padding: 0.5em;
 }
 
@@ -22,8 +34,8 @@
   margin-left: auto;
   margin-right: auto;
   width: 30%;
-  margin-top: 3em;
-  margin-bottom: 3em;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 #login-header {
@@ -37,4 +49,18 @@
 
 #registration-form a {
   text-align: center;
+}
+
+@media only screen and (min-device-width : 768px){
+  #registration-form {
+    width: 40%;
+    margin-top: 15%;
+  }
+}
+
+@media only screen and (min-device-width : 1024px){
+  #registration-form {
+    width: 25%;
+    margin-top: 7%;
+  }
 }

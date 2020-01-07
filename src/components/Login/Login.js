@@ -15,7 +15,6 @@ export default class Login extends React.Component {
 
   handleLoginSuccess = () => {
     const { location, history } = this.props
-    console.log(location.state)
     const destination = (location.state || {}).from || '/'
     history.push(destination)
   }

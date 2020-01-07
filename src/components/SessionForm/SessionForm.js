@@ -110,7 +110,6 @@ export default class SessionForm extends React.Component {
   handleSessionSubmit = e => {
     e.preventDefault();
     let newSession = JSON.stringify(this.state)
-    console.log(newSession)
     ApiService.addSession(newSession)
     .then(res => {
       this.context.addSessionContext(res)
@@ -141,7 +140,6 @@ export default class SessionForm extends React.Component {
 
 
   render(){
-    console.log(this.state);
     return(
       <div className='addSession'>
       <form id='add-session' onSubmit={this.handleSessionSubmit}>

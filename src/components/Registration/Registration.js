@@ -24,9 +24,9 @@ export default class Registration extends React.Component {
   }
 
   render() {
-    console.log(this.state)
     return (
       <form id="registration-form" onSubmit={this.handleSubmit}>
+        <h3 id="registration-header">Register</h3>
         <label htmlFor="username" className="login-details">E-mail</label>
         <input type="text" className="login-details" name="email" onChange={e => this.handleInputChange(e)}></input>
         <label htmlFor="username" className="login-details">Username</label>

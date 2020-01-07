@@ -69,20 +69,25 @@ p {
 }
 
 @media only screen and (min-device-width : 768px) {
-
   .cashMoney .winning, .cashMoney .losing{
     padding-top: 0.2em;
   }
   .detailedView {
-    width: 30%;
-    margin-top: 5%;
+    margin-top: 15%;
     height: auto;
     padding: 0 1em 1em 1em;
   }
-
   .detailedView p, .detailedView li{
     border: 2px inset white;
     padding: 0.8em;
   }
   
+}
+
+@media only screen and (min-device-width : 1024px) {
+  .detailedView {
+    width: 30%;
+    margin-top: 5%;
+  }
+
 }

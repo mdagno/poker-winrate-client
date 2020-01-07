@@ -33,10 +33,23 @@
 @media only screen and (min-device-width : 768px){
   .homePage{
     text-align: center;
-    width: 40%;
-    height: 50%;
     border-top: 30px outset white;
     border-left: 30px outset white;
+    margin-top: 150px;
+    width: 70%;
+  }
+  
+  .homePage h2{
+    padding: 1em;
+    margin-left: 1em;
+  }
+}
+
+@media only screen and (min-device-width : 1024px){
+  .homePage{
+    text-align: center;
+    width: 40%;
+    height: 50%;
     margin-top: 150px;
   }
   

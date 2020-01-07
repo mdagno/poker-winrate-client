@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   color: #222;
-  width: 30%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   background-color: #ccc;
@@ -10,10 +10,16 @@
   border: 1px outset white;
   border-radius: 5px;
   font-size: 0.8em;
-  margin-top: 5%;
+  margin-top: 11%;
+}
+
+#login-form input {
+  border-radius: 5px;
 }
 
 .login-details {
+  text-align: center;
+  font-size: 1.2em;
   margin: 1em;
   padding: 0.5em;
 }
@@ -26,6 +32,11 @@
   margin-bottom: 3em;
 }
 
+#login-button:hover{
+  width: 31%;
+  font-style: italic;
+}
+
 #login-header {
   margin: 0;
   margin-left: auto;
@@ -36,4 +47,18 @@
 
 #login-form a {
   text-align: center;
+}
+
+@media only screen and (min-device-width : 768px){
+  #login-form {
+    width: 40%;
+    margin-top: 15%;
+  }
+}
+
+@media only screen and (min-device-width : 1024px){
+  #login-form {
+    width: 25%;
+    margin-top: 7%;
+  }
 }
