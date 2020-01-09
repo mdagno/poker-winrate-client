@@ -55,6 +55,7 @@ export default class Login extends React.Component {
         <label htmlFor="password"className="login-details">Password</label>
         <input type="password" className="login-details" name="password" onChange={e => this.handleInputChange(e)}></input>
         <button type="submit" id="login-button">Login</button>
+        {this.state.error && <p>{this.state.error}</p>}
         <Link to="/register">Don't have an account?</Link>
       </form>
     )

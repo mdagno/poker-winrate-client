@@ -21,6 +21,14 @@ export default class Registration extends React.Component {
     e.preventDefault()
     const {email, username, password} = this.state;
     AuthService.newUser({email, username, password})
+    .then(() => {
+      this.props.history.push('/login');
+    })
+    .catch(res => {
+      this.setState({
+        error: res.error
+      })
+    })
   }
 
   render() {
@@ -36,6 +44,7 @@ export default class Registration extends React.Component {
         {/* <label htmlFor="confirm-password" className="login-details">Confirm Password</label>
         <input type="password" className="login-details" name="password" onChange={e => this.handleInputChange(e)}></input> */}
         <button type="submit" id="login-button">Register</button>
+        {this.state.error && <p>{this.state.error}</p>}
         <Link to="/login">Already have an account?</Link>
       </form>
     )

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing component Landing renders correctly 1`] = `
+<div
+  className="landing"
+>
+  <h2
+    className="landingTitle"
+  >
+    Welcome to Poker WinRate!
+  </h2>
+  <p>
+    Poker WinRate is a useful tool to determine your long term win rate in your poker games.  To improve your win rate overtime, it is critical to track your sessions over time to analyze your pattern of play over a long period of time to determine if your edge against other players is improving.
+  </p>
+  <p>
+    1. Begin by creating an account and logging in.
+  </p>
+  <p>
+    2. Add a completed sessions by clicking the "Add a Session" tab to access a for and fill in the required information.
+  </p>
+  <img
+    alt="Form to input session details"
+    className="square-image"
+    src="poker-winrate-one.PNG"
+  />
+  <p>
+    3. Once added, past sessions can be accessed by clicking the "Your Sessions" tab.  A filter is available to sort though sessions by different game types.
+  </p>
+  <img
+    alt="All sessions rendered as indivual session cards"
+    className="rec-image"
+    src="poker-winrate-three.PNG"
+  />
+  <p>
+    4. A detailed view of past sessions is available by clicking on one of the session cards.  In this view, a past session can be updated by clicking Edit.
+  </p>
+  <img
+    alt="Detailed view of a past session"
+    className="rec-image"
+    src="poker-winrate-four.PNG"
+  />
+  <p>
+    5. A data visualization of all past sessions can be viewed by clicking the "Analytics" tab.
+  </p>
+  <img
+    alt="Example graph of compiled session data"
+    className="rec-image"
+    src="poker-winrate-two.PNG"
+  />
+</div>
+`;

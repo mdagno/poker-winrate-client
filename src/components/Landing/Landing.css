@@ -1,9 +1,10 @@
 .landing {
   margin-top: 5%;
-  width: 50%;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
   color: white;
+  text-align: center;
 }
 
 .landingTitle {
@@ -17,17 +18,34 @@
 
 .landing p {
   text-align: left;
+  line-height: 2em;
+  margin-bottom: 1.2em;
+  margin-top: 1.2em;
+  font-size: 1.08em;
+}
+
+.square-image {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rec-image {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media only screen and (min-device-width : 768px){
   .landing {
+    width: 50%;
     margin-top: 15%;
   }
 }
 
 @media only screen and (min-device-width : 1024px){
   .landing {
-    margin-top: 5%;
+    margin-top: 7%;
   }
 }
 

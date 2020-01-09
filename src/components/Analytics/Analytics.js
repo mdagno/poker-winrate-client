@@ -65,6 +65,7 @@ static contextType = ApiContext;
       cashSessions.forEach((session, index) => {
         let sessionWinRate = (session.cashed_out - session.buy_in) / session.big_blind / session.session_length;
         totalWinRate = (totalWinRate + sessionWinRate) / (index + 1);
+        console.log(totalWinRate)
         renderedData.push(totalWinRate);
       })
       return renderedData;

@@ -7,7 +7,7 @@
   margin-right: auto;
   width: 80%;
   text-align: center;
-  margin-top: 5%;
+  margin-top: 12%;
 }
 
 .sessionList ul{
@@ -36,9 +36,11 @@
 }
 
 .sessionList select{
-  width: 60%;
+  width: 40%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
   display: block;
 	font-size: 16px;
 	font-family: sans-serif;
@@ -160,7 +162,7 @@
 
   .sessionList li{
     margin-bottom: 10px;
-    width: 32%;
+    width: 45%;
     display: inline-block;
   }
 
@@ -199,9 +201,3 @@
   }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width: 1024px) {
-  .sessionList {
-    margin-top: 10%;
-  }
-  
-}

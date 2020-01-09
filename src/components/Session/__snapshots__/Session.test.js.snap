@@ -8,7 +8,7 @@ exports[`Session component Session renders correctly 1`] = `
     className="sessionDetails"
   >
     <h3>
-      January 9th 2020, 2:56:37 am
+      January 9th 2020, 4:43:25 am
     </h3>
     <ul
       className="gameTypes"
