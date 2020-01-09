@@ -1,27 +1,28 @@
 import React from 'react';
-import Session from './Session'
+import Login from './Login';
 import renderer from 'react-test-renderer';
+import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import ReactDOM from 'react-dom'
 
-describe('Session component', () => {
+describe('Login component', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(
-      <BrowserRouter>
-       <Session />
-      </BrowserRouter>, div);
+    ReactDOM.render(     
+    <BrowserRouter>
+      <Login />
+    </BrowserRouter>, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('Session renders correctly', () => {
+  it('Login renders correctly', () => {
     const tree = renderer
-      .create(
-       <BrowserRouter>
-        <Session />
-       </BrowserRouter>)
+      .create(    
+      <BrowserRouter>
+        <Login />
+      </BrowserRouter>)
       .toJSON();
     expect(tree).toMatchSnapshot();  
   });
-  
 })
+
+

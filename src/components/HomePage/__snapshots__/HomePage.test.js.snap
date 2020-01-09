@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage component HomePage renders correctly 1`] = `
+<div
+  className="homePage"
+>
+  <h2>
+    Your Summary
+  </h2>
+  <h3>
+    $
+    0
+     Total Profit
+  </h3>
+  <h3>
+    $
+    0
+     Cash Game Winnings
+  </h3>
+  <h3>
+    $
+    0
+     Tournament Winnings
+  </h3>
+  <h3>
+    0
+     Sessions Played
+  </h3>
+  <h3>
+    NaN
+     BB/hr
+  </h3>
+</div>
+`;

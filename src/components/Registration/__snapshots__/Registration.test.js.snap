@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Registration component Registration renders correctly 1`] = `
+<form
+  id="registration-form"
+  onSubmit={[Function]}
+>
+  <h3
+    id="registration-header"
+  >
+    Register
+  </h3>
+  <label
+    className="login-details"
+    htmlFor="username"
+  >
+    E-mail
+  </label>
+  <input
+    className="login-details"
+    name="email"
+    onChange={[Function]}
+    type="text"
+  />
+  <label
+    className="login-details"
+    htmlFor="username"
+  >
+    Username
+  </label>
+  <input
+    className="login-details"
+    name="username"
+    onChange={[Function]}
+    type="text"
+  />
+  <label
+    className="login-details"
+    htmlFor="password"
+  >
+    Password
+  </label>
+  <input
+    className="login-details"
+    name="password"
+    onChange={[Function]}
+    type="password"
+  />
+  <button
+    id="login-button"
+    type="submit"
+  >
+    Register
+  </button>
+  <a
+    href="/login"
+    onClick={[Function]}
+  >
+    Already have an account?
+  </a>
+</form>
+`;

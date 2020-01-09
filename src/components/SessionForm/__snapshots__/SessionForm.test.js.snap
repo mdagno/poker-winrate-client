@@ -1,0 +1,180 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SessionForm component SessionForm renders correctly 1`] = `
+<div
+  className="addSession"
+>
+  <form
+    id="add-session"
+    onSubmit={[Function]}
+  >
+    <legend>
+      <h2>
+        Enter Session Details
+      </h2>
+    </legend>
+    <div
+      className="form-row gameTypeTwo"
+    >
+      <label
+        htmlFor="gameTypeTwo"
+      >
+        Game Type: 
+      </label>
+      <select
+        defaultValue="Cash"
+        id="gameTypeTwo"
+        onChange={[Function]}
+      >
+        <option
+          value="Cash"
+        >
+          Cash Game
+        </option>
+        <option
+          value="Tournament"
+        >
+          Tournament
+        </option>
+      </select>
+    </div>
+    <fieldset>
+      <div
+        className="form-row"
+      >
+        <label
+          htmlFor="gameTypeOne"
+        >
+          Live or Online
+        </label>
+        <select
+          defaultValue="Live"
+          id="gameTypeOne"
+          onChange={[Function]}
+        >
+          <option
+            value="Live"
+          >
+            Live game
+          </option>
+          <option
+            value="Online"
+          >
+            Online game
+          </option>
+        </select>
+      </div>
+      <div
+        className="form-row"
+      >
+        <label
+          htmlFor="smallBlind"
+        >
+          Small Blind
+        </label>
+        <input
+          className="form-smallBlind"
+          id="smallBlind"
+          min="0.01"
+          onChange={[Function]}
+          step="0.01"
+          type="number"
+        />
+      </div>
+      <div
+        className="form-row"
+      >
+        <label
+          htmlFor="bigBlind"
+        >
+          Big Blind
+        </label>
+        <input
+          className="form-bigBlind"
+          id="bigBlind"
+          min="0.01"
+          onChange={[Function]}
+          step="0.01"
+          type="number"
+        />
+      </div>
+      <div
+        className="form-row"
+      >
+        <label
+          htmlFor="form-buyIn"
+        >
+          Buy-in
+        </label>
+        <input
+          className="form-buyIn"
+          onChange={[Function]}
+          step="0.01"
+          type="number"
+        />
+      </div>
+      <div
+        className="form-row"
+      >
+        <label
+          htmlFor="cashedOut"
+        >
+          Cashed out
+        </label>
+        <input
+          className="form-cashedOut"
+          id="cashedOut"
+          onChange={[Function]}
+          step="0.01"
+          type="number"
+        />
+      </div>
+      <div
+        className="form-row"
+      >
+        <label
+          htmlFor="cashedOut"
+        >
+          Hours played
+        </label>
+        <input
+          className="form-SessionLength"
+          id="sessionLength"
+          onChange={[Function]}
+          step="0.1"
+          type="number"
+        />
+      </div>
+      <div
+        className="form-row"
+      >
+        <label
+          htmlFor="notes"
+        >
+          Notes
+        </label>
+        <textarea
+          className="form-notes"
+          id="notes"
+          onChange={[Function]}
+          type="text"
+        />
+      </div>
+      <div
+        className="form-row"
+      >
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+        <button
+          type="reset"
+        >
+          Reset
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</div>
+`;

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar component NavBar renders correctly 1`] = `
+<nav
+  className="navBar"
+>
+  <div
+    className="hamburger-menu"
+  >
+    <i
+      class="fas fa-bars"
+      onClick={[Function]}
+    />
+  </div>
+  <ul
+    className="navLinksDesktop"
+  >
+    <a
+      aria-current="page"
+      className="active"
+      href="/"
+      onClick={[Function]}
+      style={Object {}}
+    >
+      <li
+        className="navLink one"
+      >
+        Home
+      </li>
+    </a>
+    <a
+      aria-current={null}
+      href="/login"
+      onClick={[Function]}
+    >
+      <li
+        className="navLink two"
+      >
+        Login
+      </li>
+    </a>
+    <a
+      aria-current={null}
+      href="/register"
+      onClick={[Function]}
+    >
+      <li
+        className="navLink one"
+      >
+        Register
+      </li>
+    </a>
+  </ul>
+</nav>
+`;
